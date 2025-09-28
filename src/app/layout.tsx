@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body>
+        <body className="bg-gradient px-20 py-16">
         <Header/>
         <main>{children}</main>
         </body>
