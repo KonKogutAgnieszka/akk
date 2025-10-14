@@ -1,5 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import RotatingTexts from "@/components/RotatingText.js";
+
+const textList: string[] = [
+  "👩🏻‍💻 frontend developer",
+  "🖥️ buduję interfejsy",
+  "💡 rozwiązuje problemy",
+  "⚙️ wdrażam rozwiązania",
+  "🥊 podejmuje wyzwania",
+];
 
 export default function HeroSection() {
   return (
@@ -21,7 +32,9 @@ export default function HeroSection() {
               Agnieszka <br />
               Koń-Kogut
             </h1>
-            <p className="text-2xl flex-end">frontend developer</p>
+            <div className={"mr-0"}>
+              <RotatingTexts texts={textList} />
+            </div>
           </div>
         </div>
         <Link href="/contact">poznajmy się</Link>
