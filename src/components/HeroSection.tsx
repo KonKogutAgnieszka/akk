@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import RotatingTexts from "@/components/RotatingText.js";
+import Button from "@/components/ui/Button";
 
 const textList: string[] = [
   "👩🏻‍💻 frontend developer",
@@ -14,7 +15,7 @@ const textList: string[] = [
 
 export default function HeroSection() {
   return (
-    <div className={"flex justify-center mt-16"}>
+    <div className={"flex justify-center mt-30"}>
       <div className={"flex flex-col justify-center mr-20"}>
         <p className="text-4xl">cześć, jestem</p>
 
@@ -37,7 +38,9 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <Link href="/contact">poznajmy się</Link>
+        <div className={"mt-6"}>
+          <Button text={"poznajmy się"} variant={"green"} />
+        </div>
       </div>
       <Image
         src={"/assets/images/photo_akk_no_back.png"}
