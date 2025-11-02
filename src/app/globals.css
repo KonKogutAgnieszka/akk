@@ -5,20 +5,12 @@
 @theme {
     --font-sans: "Inter", sans-serif;
     --font-serif: "Lora", serif;
-    --color-primary: #ffffff;
+    --color-background: #6689A7;
+    --color-primary: #000000;
     --color-blue-dark: #1F2C4E;
-    --color-green: #AFC879;
+    --color-yellow: #FFD43B;
 
 
 }
 
-.bg-gradient {
-    background: linear-gradient(
-            to bottom,
-            #1F2C4E 0%,
-            #264F6B 51%,
-            #6689A7 100%
-    ) no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-}
+

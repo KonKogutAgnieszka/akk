@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type Props = {
   texts: string[];
@@ -25,11 +25,11 @@ export default function RotatingTextsEnter({
 
   return (
     <div
-      className="relative overflow-hidden font-serif italic text-xl"
+      className="relative overflow-hidden font-serif italic text-2xl"
       style={{ height: rowHeight, lineHeight: `${rowHeight}px` }}
     >
       <p key={index} className="rt-enter" style={{ animationDuration: `${duration}ms` }}>
-        {texts[index] ?? ""}
+        {texts[index] ?? ''}
       </p>
 
       <style>{`
