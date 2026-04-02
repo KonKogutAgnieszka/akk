@@ -25,7 +25,7 @@ export default function RotatingTextsEnter({
 
   return (
     <div
-      className="relative overflow-hidden font-serif italic text-2xl"
+      className="relative overflow-hidden font-serif italic text-l"
       style={{ height: rowHeight, lineHeight: `${rowHeight}px` }}
     >
       <p key={index} className="rt-enter" style={{ animationDuration: `${duration}ms` }}>

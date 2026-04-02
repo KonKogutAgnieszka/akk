@@ -1,18 +1,41 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/cases', label: 'Projects' },
+  { href: '/contact', label: 'About' },
+];
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
-    <header>
-      <nav className="flex items-center justify-between text-lg">
-        <div className="flex items-center space-x-20">
-          <Link href="/">główna</Link>
-          <Link href="/cases">przypadki</Link>
-          <Link href="/blog">blog</Link>
-        </div>
-        <div>
-          <Link href="/contact">kontakt</Link>
-        </div>
+    <header className="flex items-center justify-between ">
+      <Link href="/" className="flex items-center gap-3" style={{ color: 'var(--color-text)' }}>
+        <Image src="/assets/images/logo.svg" alt="logo" width={32} height={32} />
+        <span className="font-display  text-lg font-medium">Agnieszka Koń-Kogut</span>
+      </Link>
+
+      <nav className="flex items-center gap-14">
+        {navLinks.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`nav-link ${pathname === href ? 'nav-link-active' : ''}`}
+          >
+            {label}
+          </Link>
+        ))}
       </nav>
+
+      <Link href="/contact" className="btn btn-primary text-sm">
+        Connect
+      </Link>
     </header>
   );
 }

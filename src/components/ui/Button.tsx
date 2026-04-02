@@ -1,12 +1,14 @@
 type Props = {
   text: string;
-  variant: 'yellow';
+  variant?: 'primary' | 'ghost';
+  onClick?: () => void;
 };
 
-export default function Button({ text, variant }: Props) {
+export default function Button({ text, variant = 'primary', onClick }: Props) {
   return (
     <button
-      className={`inline-block bg-yellow width-auto px-4 py-2 rounded-full text-xl text-blue-dark cursor-pointer`}
+      onClick={onClick}
+      className={`btn ${variant === 'primary' ? 'btn-primary' : 'btn-ghost'}`}
     >
       {text}
     </button>
