@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
-
 import LangSwitcher from './ui/LangSwitcher';
 
 const navLinks = [
@@ -16,13 +14,12 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const locale = useLocale();
 
   return (
-    <header className="flex items-center justify-between ">
+    <header className="flex items-center justify-between">
       <Link href="/" className="flex items-center gap-3" style={{ color: 'var(--color-text)' }}>
         <Image src="/assets/images/logo.svg" alt="logo" width={32} height={32} />
-        <span className="font-display  text-lg font-medium">Agnieszka Koń-Kogut</span>
+        <span className="font-display text-lg font-medium">Agnieszka Koń-Kogut</span>
       </Link>
 
       <nav className="flex items-center gap-14">
@@ -36,8 +33,9 @@ export default function Header() {
           </Link>
         ))}
       </nav>
+
       <div className="flex items-center gap-4">
-        <LangSwitcher currentLanguage={locale} />
+        <LangSwitcher />
         <Link href="/contact" className="btn btn-primary text-sm">
           Connect
         </Link>

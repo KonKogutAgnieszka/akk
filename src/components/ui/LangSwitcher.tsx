@@ -2,17 +2,17 @@
 
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function LangSwitcher() {
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
 
   const nextLocale = locale === 'pl' ? 'en' : 'pl';
 
   const handleSwitch = () => {
-    router.replace(pathname, { locale: nextLocale });
+    document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000`;
+    router.refresh();
   };
 
   return (

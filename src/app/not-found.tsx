@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 export default async function NotFound() {
-  const t = await getTranslations('NotFound');
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: 'NotFound' });
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[80vh] gap-8 text-center">
@@ -13,7 +14,6 @@ export default async function NotFound() {
         >
           404
         </span>
-
         <p
           className="text-xs uppercase tracking-widest"
           style={{ color: 'var(--color-text-subtle)' }}
