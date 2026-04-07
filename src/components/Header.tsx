@@ -3,17 +3,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import LangSwitcher from './ui/LangSwitcher';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/cases', label: 'Projects' },
-  { href: '/contact', label: 'About' },
-];
 
 export default function Header() {
   const pathname = usePathname();
+  const t = useTranslations('Header');
+
+  const navLinks = [
+    { href: '/', label: t('nav.home') },
+    { href: '/blog', label: t('nav.blog') },
+    { href: '/cases', label: t('nav.cases') },
+    { href: '/contact', label: t('nav.about') },
+  ];
 
   return (
     <header className="flex items-center justify-between">
@@ -37,7 +39,7 @@ export default function Header() {
       <div className="flex items-center gap-4">
         <LangSwitcher />
         <Link href="/contact" className="btn btn-primary text-sm">
-          Connect
+          {t('connect')}
         </Link>
       </div>
     </header>

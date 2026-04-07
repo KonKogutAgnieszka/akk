@@ -19,6 +19,15 @@
       "growth": "rozwój"
     }
   },
+  "Header": {
+    "nav": {
+      "home": "Home",
+      "blog": "Blog",
+      "cases": "Projekty",
+      "about": "O mnie"
+    },
+    "connect": "Porozmawiajmy"
+  },
   "NotFound": {
     "label": "under construction",
     "title": "Strona nie istnieje",

@@ -19,6 +19,15 @@
       "growth": "growth"
     }
   },
+  "Header": {
+    "nav": {
+      "home": "Home",
+      "blog": "Blog",
+      "cases": "Projects",
+      "about": "About"
+    },
+    "connect": "Let's talk"
+  },
   "NotFound": {
     "label": "under construction",
     "title": "Page not found",
