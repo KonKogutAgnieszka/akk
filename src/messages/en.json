@@ -1,0 +1,27 @@
+{
+  "HeroSection": {
+    "badge": "available for new projects",
+    "greeting": "hi, I'm",
+    "name": "Agnieszka",
+    "subtitle": "Fullstack Developer",
+    "btnPrimary": "let's meet",
+    "btnGhost": "my projects",
+    "rotating": [
+      "👩🏻‍💻 fullstack developer",
+      "🖥️ I build interfaces",
+      "💡 I solve problems",
+      "⚙️ I implement solutions",
+      "🥊 I take on challenges"
+    ],
+    "stats": {
+      "problemsSolved": "problems solved",
+      "experienceYears": "experience years",
+      "growth": "growth"
+    }
+  },
+  "NotFound": {
+    "label": "under construction",
+    "title": "Page not found",
+    "btn": "Back to home"
+  }
+}

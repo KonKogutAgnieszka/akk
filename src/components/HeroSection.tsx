@@ -3,35 +3,32 @@
 import Image from 'next/image';
 import RotatingTexts from '@/components/RotatingText.js';
 import Button from '@/components/ui/Button';
-
-const textList: string[] = [
-  '👩🏻‍💻 fullstack developer',
-  '🖥️ buduję interfejsy',
-  '💡 rozwiązuje problemy',
-  '⚙️ wdrażam rozwiązania',
-  '🥊 podejmuje wyzwania',
-];
+import { useTranslations } from 'next-intl';
 
 export default function HeroSection() {
+  const t = useTranslations('HeroSection');
+
+  const textList: string[] = t.raw('rotating') as string[];
+
   return (
     <section className="section flex flex-col min-h-[75vh] justify-center p-0">
       <div className="flex items-center justify-between gap-12">
         <div className="flex flex-col gap-6 max-w-xl">
           <div>
-            <span className="badge-available">dostępna do nowych projektów</span>
+            <span className="badge-available">{t('badge')}</span>
           </div>
 
           <div className="flex flex-col gap-2">
             <h1 className="font-display leading-none">
-              <span className="hero-greeting block">cześć, jestem</span>
-              <span className="display-italic text-[96px]">Agnieszka</span>
+              <span className="hero-greeting block">{t('greeting')}</span>
+              <span className="display-italic text-[96px]">{t('name')}</span>
             </h1>
-            <p className="hero-subtitle">Fullstack Developer</p>
+            <p className="hero-subtitle">{t('subtitle')}</p>
           </div>
 
           <div className="flex gap-4 items-center">
-            <Button text="poznajmy się" variant="primary" />
-            <Button text="moje projekty" variant="ghost" />
+            <Button text={t('btnPrimary')} variant="primary" />
+            <Button text={t('btnGhost')} variant="ghost" />
           </div>
         </div>
 
@@ -80,9 +77,9 @@ export default function HeroSection() {
       </div>
 
       <div className="flex gap-12 pt-8">
-        <StatItem number="100+" label="problems solved" animateCount />
-        <StatItem number="3+" label="experience years" />
-        <StatItem number="∞" label="growth" />
+        <StatItem number="100+" label={t('stats.problemsSolved')} animateCount />
+        <StatItem number="3+" label={t('stats.experienceYears')} />
+        <StatItem number="∞" label={t('stats.growth')} />
       </div>
     </section>
   );

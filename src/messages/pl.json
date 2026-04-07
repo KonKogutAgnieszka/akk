@@ -1,0 +1,27 @@
+{
+  "HeroSection": {
+    "badge": "dostępna do nowych projektów",
+    "greeting": "cześć, jestem",
+    "name": "Agnieszka",
+    "subtitle": "Fullstack Developer",
+    "btnPrimary": "poznajmy się",
+    "btnGhost": "moje projekty",
+    "rotating": [
+      "👩🏻‍💻 fullstack developer",
+      "🖥️ buduję interfejsy",
+      "💡 rozwiązuję problemy",
+      "⚙️ wdrażam rozwiązania",
+      "🥊 podejmuję wyzwania"
+    ],
+    "stats": {
+      "problemsSolved": "rozwiązanych problemów",
+      "experienceYears": "lata doświadczenia",
+      "growth": "rozwój"
+    }
+  },
+  "NotFound": {
+    "label": "under construction",
+    "title": "Strona nie istnieje",
+    "btn": "Wróć na stronę główną"
+  }
+}

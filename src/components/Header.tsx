@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
+
+import LangSwitcher from './ui/LangSwitcher';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -13,6 +16,7 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const locale = useLocale();
 
   return (
     <header className="flex items-center justify-between ">
@@ -32,10 +36,12 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-
-      <Link href="/contact" className="btn btn-primary text-sm">
-        Connect
-      </Link>
+      <div className="flex items-center gap-4">
+        <LangSwitcher currentLanguage={locale} />
+        <Link href="/contact" className="btn btn-primary text-sm">
+          Connect
+        </Link>
+      </div>
     </header>
   );
 }

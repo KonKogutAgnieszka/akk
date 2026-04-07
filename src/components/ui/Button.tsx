@@ -8,7 +8,7 @@ export default function Button({ text, variant = 'primary', onClick }: Props) {
   return (
     <button
       onClick={onClick}
-      className={`btn ${variant === 'primary' ? 'btn-primary' : 'btn-ghost'}`}
+      className={`cursor-pointer btn ${variant === 'primary' ? 'btn-primary' : 'btn-ghost'}`}
     >
       {text}
     </button>

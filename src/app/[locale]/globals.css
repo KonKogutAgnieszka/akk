@@ -181,7 +181,7 @@
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 500;
-    color: #AACC00;
+    color: #aacc00;
     line-height: 1;
   }
 
@@ -213,6 +213,44 @@
     border: none;
     border-top: 1px solid var(--color-border);
   }
+}
+
+/* Flags */
+
+.flag-btn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  flex-shrink: 0;
+}
+
+.flag-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  opacity: 0.65;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.flag-btn:hover::after {
+  opacity: 0;
+}
+
+.flag-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 @layer utilities {
