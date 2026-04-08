@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import RotatingTexts from '@/components/RotatingText.js';
+import { StatItem } from './StatItem';
 import Button from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
 
@@ -70,34 +71,29 @@ export default function HeroSection() {
               animationDelay: '400ms',
             }}
           >
-            <Image src="/assets/images/logo.svg" alt="logo" width={32} height={32} className="mb-1" />
+            <Image
+              src="/assets/images/logo.svg"
+              alt="logo"
+              width={32}
+              height={32}
+              className="mb-1"
+            />
             <RotatingTexts texts={textList} />
           </div>
         </div>
       </div>
 
       <div className="flex gap-12 pt-8">
-        <StatItem number="100+" label={t('stats.problemsSolved')} animateCount />
-        <StatItem number="3+" label={t('stats.experienceYears')} />
-        <StatItem number="∞" label={t('stats.growth')} />
+        <div className="flex flex-wrap gap-12 pt-8">
+          <StatItem number="120+" label={t('stats.challengesTaken')} animation="count" />
+
+          <StatItem number="100+" label={t('stats.problemsSolved')} animation="problems-solved" />
+
+          <StatItem number="3+" label={t('stats.experienceYears')} animation="count" />
+
+          <StatItem number="∞" label={t('stats.growth')} />
+        </div>
       </div>
     </section>
-  );
-}
-
-function StatItem({
-  number,
-  label,
-  animateCount,
-}: {
-  number: string;
-  label: string;
-  animateCount?: boolean;
-}) {
-  return (
-    <div className="flex flex-col gap-1">
-      <span className={`stat-number ${animateCount ? 'animate-count-up' : ''}`}>{number}</span>
-      <span className="stat-label">{label}</span>
-    </div>
   );
 }
