@@ -10,10 +10,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang={locale} className="font-sans text-primary">
-      <body className="bg-background px-6 py-5 md:px-12 lg:px-56">
+      <body className="bg-background py-5">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
+          <div className="max-w-5xl mx-auto px-6">
+            <Header />
+            <main>{children}</main>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
