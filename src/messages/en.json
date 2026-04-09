@@ -29,6 +29,22 @@
     },
     "connect": "Let's talk"
   },
+  "AboutSection": {
+    "heading1": "product, analysis, code",
+    "heading2": "fullstack",
+    "intro": "I combine development with product thinking.\nI understand user needs and translate them into solutions that\nwork – technically and business-wise.",
+    "specializationsLabel": "Specializations",
+    "stackLabel": "Stack",
+    "specializations": [
+      { "number": "01", "title": "End-to-end development", "description": "From UI to backend and business logic" },
+      { "number": "02", "title": "Backend logic & data", "description": "Implementing logic and working with data and code quality" },
+      { "number": "03", "title": "Performance & UX", "description": "Optimizing performance and user experience" },
+      { "number": "04", "title": "Business analysis", "description": "Understanding needs and translating them into technical solutions" }
+    ],
+    "ctaSubtitle": "See concrete experience",
+    "ctaDownload": "Download CV",
+    "ctaContact": "Contact"
+  },
   "NotFound": {
     "label": "under construction",
     "title": "Page not found",

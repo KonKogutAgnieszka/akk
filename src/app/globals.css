@@ -14,7 +14,7 @@
     --color-accent-glow: rgba(45, 212, 199, 0.25);
 
     --color-text: #f0f0f0;
-    --color-text-muted: rgba(240, 240, 240, 0.45);
+    --color-text-muted: rgba(240, 240, 240, 0.75);
     --color-text-subtle: rgba(240, 240, 240, 0.25);
 
     --font-display: 'Playfair Display', Georgia, serif;
@@ -314,4 +314,3 @@
     box-shadow: 0 0 40px var(--color-accent-glow);
   }
 }
-

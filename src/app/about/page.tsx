@@ -1,5 +1,5 @@
-import { notFound } from 'next/navigation';
+import AboutSection from '@/components/About/AboutSection';
 
-export default function ContactPage() {
-  notFound();
+export default function AboutPage() {
+  return <AboutSection />;
 }
