@@ -288,6 +288,25 @@
     }
   }
 
+  @keyframes fill-lr {
+    from { background-size: 0% 100%; }
+    to { background-size: 100% 100%; }
+  }
+
+  .btn-fill-lr {
+    background-image: linear-gradient(to right, var(--color-accent), var(--color-accent));
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    color: var(--color-text);
+    border: 1.5px solid var(--color-accent);
+  }
+
+  .btn-fill-lr.is-filled {
+    animation: fill-lr 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    color: #0a0f0e;
+  }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease forwards;
   }

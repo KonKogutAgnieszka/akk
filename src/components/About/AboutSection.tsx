@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import SnakePath from './SnakePath';
 import Technology from '@/components/ui/Technology';
@@ -11,6 +12,25 @@ export default function AboutSection() {
   const ref2 = useFadeInUp<HTMLDivElement>(150);
   const ref3 = useFadeInUp<HTMLDivElement>(300);
   const ref4 = useFadeInUp<HTMLDivElement>(450);
+
+  const btnRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    const btn = btnRef.current;
+    if (!btn) return;
+
+    function onScroll() {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 50;
+      if (scrolledToBottom) {
+        btn!.classList.add('is-filled');
+        window.removeEventListener('scroll', onScroll);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const specializations = t.raw('specializations') as {
     number: string;
@@ -105,7 +125,7 @@ export default function AboutSection() {
           </p>
           <p className="font-display italic text-2xl">{t('ctaDownload')}</p>
           <div className="flex gap-4 mt-2">
-            <a href="/cv.pdf" className="btn btn-primary">
+            <a ref={btnRef} href="/cv.pdf" className="btn btn-fill-lr">
               {t('ctaDownload')}
             </a>
             <a href="/contact" className="btn btn-ghost">
