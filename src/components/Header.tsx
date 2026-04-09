@@ -12,15 +12,15 @@ export default function Header() {
   const t = useTranslations('Header');
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [menuOpen]);
 
   const navLinks = [
@@ -32,13 +32,15 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between">
-      {/* Logo */}
-      <Link href="/" className="flex items-center gap-3 z-50" style={{ color: 'var(--color-text)' }}>
+      <Link
+        href="/"
+        className="flex items-center gap-3 z-50"
+        style={{ color: 'var(--color-text)' }}
+      >
         <Image src="/assets/images/logo.svg" alt="logo" width={32} height={32} />
         <span className="font-display text-lg font-medium">Agnieszka Koń-Kogut</span>
       </Link>
 
-      {/* Desktop nav */}
       <nav className="hidden md:flex items-center gap-14">
         {navLinks.map(({ href, label }) => (
           <Link
@@ -51,7 +53,6 @@ export default function Header() {
         ))}
       </nav>
 
-      {/* Desktop right side */}
       <div className="hidden md:flex items-center gap-4">
         <LangSwitcher />
         <Link href="/contact" className="btn btn-primary text-sm">
@@ -59,10 +60,9 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Mobile hamburger */}
       <button
         className="md:hidden z-50 flex flex-col justify-center items-center w-8 h-8 gap-[5px]"
-        onClick={() => setMenuOpen(prev => !prev)}
+        onClick={() => setMenuOpen((prev) => !prev)}
         aria-label="Toggle menu"
       >
         <span
@@ -79,9 +79,9 @@ export default function Header() {
         />
       </button>
 
-      {/* Mobile menu overlay */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 flex flex-col gap-8 px-6 pt-24 pb-10"
+        <div
+          className="md:hidden fixed inset-0 z-40 flex flex-col gap-8 px-6 pt-24 pb-10"
           style={{ background: 'var(--color-bg)' }}
         >
           <nav className="flex flex-col gap-6">
