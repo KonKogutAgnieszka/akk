@@ -37,7 +37,7 @@ export default function SnakePath() {
       viewBox="0 -180 1076 1400"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute left-0 w-full pointer-events-none"
+      className="absolute left-0 w-full pointer-events-none hidden wide:block"
       style={{ top: '50px', height: 'auto' }}
       preserveAspectRatio="xMidYMin meet"
       overflow="visible"

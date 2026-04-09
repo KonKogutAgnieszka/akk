@@ -43,7 +43,7 @@ export default function AboutSection() {
       <SnakePath />
 
       <div className="relative flex flex-col gap-18" style={{ paddingBlock: '10%' }}>
-        <div ref={ref1} className="w-[68%] mr-auto pb-28">
+        <div ref={ref1} className="w-full wide:w-[68%] mr-auto pb-28">
           <h1 className="font-display text-6xl font-medium leading-tight">{t('heading1')}</h1>
           <h2 className="font-display text-7xl font-medium mb-6">{t('heading2')}</h2>
           <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
@@ -58,7 +58,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div ref={ref2} className="ml-auto relative" style={{ height: '220px' }}>
+        <div ref={ref2} className="w-full wide:ml-auto wide:h-[220px] relative">
           <span
             className="absolute top-0 right-0 font-display italic text-2xl"
             style={{ color: 'var(--color-accent)' }}
@@ -88,7 +88,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div ref={ref3} className="mr-auto" style={{ height: '220px' }}>
+        <div ref={ref3} className="w-full  mr-auto wide:h-[220px]">
           <h3 className="font-display text-4xl font-medium mb-10">{t('stackLabel')}</h3>
           <div className="flex flex-wrap gap-8">
             {[
@@ -117,7 +117,7 @@ export default function AboutSection() {
 
         <div
           ref={ref4}
-          className="mt-18 ml-auto flex flex-col items-center gap-6 py-8"
+          className="mt-18 w-full wide:w-[58%] wide:ml-auto flex flex-col items-center gap-6 py-8"
           style={{ minHeight: '260px' }}
         >
           <p className="font-display italic text-2xl" style={{ color: 'var(--color-text-muted)' }}>
