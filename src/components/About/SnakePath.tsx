@@ -53,43 +53,10 @@ export default function SnakePath() {
         strokeLinejoin="round"
       />
       {ball && (
-        <g opacity="0.9">
-          <line
-            x1={ball.x}
-            y1={ball.y - 9}
-            x2={ball.x}
-            y2={ball.y + 6}
-            stroke="#F4DBF0"
-            strokeWidth="0.8"
-            strokeLinecap="round"
-          />
-          <line
-            x1={ball.x - 7}
-            y1={ball.y}
-            x2={ball.x + 10}
-            y2={ball.y}
-            stroke="#F4DBF0"
-            strokeWidth="0.8"
-            strokeLinecap="round"
-          />
-          <line
-            x1={ball.x - 8}
-            y1={ball.y - 6}
-            x2={ball.x + 5}
-            y2={ball.y + 8}
-            stroke="#F4DBF0"
-            strokeWidth="0.8"
-            strokeLinecap="round"
-          />
-          <line
-            x1={ball.x + 7}
-            y1={ball.y - 8}
-            x2={ball.x - 4}
-            y2={ball.y + 6}
-            stroke="#F4DBF0"
-            strokeWidth="0.8"
-            strokeLinecap="round"
-          />
+        <g>
+          <circle cx={ball.x} cy={ball.y} r={14} fill="white" opacity="0.08" />
+          <circle cx={ball.x} cy={ball.y} r={8} fill="white" opacity="0.12" />
+          <circle cx={ball.x} cy={ball.y} r={5} fill="var(--color-accent)" opacity="0.95" />
         </g>
       )}
     </svg>
