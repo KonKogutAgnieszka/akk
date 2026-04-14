@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import RotatingTexts from '@/components/RotatingText.js';
+import RotatingTexts from '@/components/ui/RotatingText.js';
 import { StatItem } from './StatItem';
 import Button from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
@@ -35,7 +35,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Image — below text on mobile, right side on desktop */}
         <div
           className="relative flex-shrink-0 self-center md:self-end mt-8 md:mt-0"
           style={{ overflow: 'visible' }}
@@ -85,7 +84,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="flex gap-12 pt-8">
         <div className="flex flex-wrap gap-6 md:gap-12 pt-6 md:pt-8">
           <StatItem number="120+" label={t('stats.challengesTaken')} animation="count" />
