@@ -3,7 +3,7 @@
     "badge": "Gotowa na nowe wyzwania",
     "greeting": "cześć, jestem",
     "name": "Agnieszka",
-    "subtitle": "Fullstack Developer",
+    "subtitle": "Frontend-focused Fullstack Developer",
     "btnPrimary": "poznajmy się",
     "btnGhost": "moje projekty",
     "rotating": [
@@ -36,10 +36,26 @@
     "specializationsLabel": "Specjalizacje",
     "stackLabel": "Stack",
     "specializations": [
-      { "number": "01", "title": "End-to-end development", "description": "Od UI po backend i logikę biznesową" },
-      { "number": "02", "title": "Logika backendowa i dane", "description": "Implementacja logiki oraz praca z danymi i jakością kodu" },
-      { "number": "03", "title": "Performance i UX", "description": "Optymalizacja działania i doświadczeń użytkownika" },
-      { "number": "04", "title": "Analiza biznesowa", "description": "Rozumienie potrzeb i przekładanie ich na rozwiązania techniczne" }
+      {
+        "number": "01",
+        "title": "End-to-end development",
+        "description": "Od UI po backend i logikę biznesową"
+      },
+      {
+        "number": "02",
+        "title": "Logika backendowa i dane",
+        "description": "Implementacja logiki oraz praca z danymi i jakością kodu"
+      },
+      {
+        "number": "03",
+        "title": "Performance i UX",
+        "description": "Optymalizacja działania i doświadczeń użytkownika"
+      },
+      {
+        "number": "04",
+        "title": "Analiza biznesowa",
+        "description": "Rozumienie potrzeb i przekładanie ich na rozwiązania techniczne"
+      }
     ],
     "ctaSubtitle": "Zobacz konkretne doświadczenie",
     "ctaDownload": "Pobierz CV",

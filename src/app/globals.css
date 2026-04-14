@@ -104,12 +104,12 @@
   .hero-greeting {
     font-family: var(--font-display);
     font-size: 96px;
-    color: #f4dbf0;
+    color: rgba(244, 219, 240, 0.45);
   }
 
   .hero-subtitle {
     font-family: var(--font-display);
-    font-size: 30px;
+    font-size: 32px;
     font-style: italic;
     color: #cfc3ca;
   }
@@ -141,14 +141,12 @@
 
   .badge-available {
     @apply inline-flex items-center gap-2 px-5 py-2 text-xs font-medium;
-    background: rgba(180, 200, 0, 0.08);
-    color: #aacc00;
+    background: rgba(180, 200, 0, 0.03);
+    color: #A3E635;
     border-radius: 999px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    box-shadow:
-      0 0 32px rgba(180, 200, 0, 0.18),
-      inset 0 0 20px rgba(180, 200, 0, 0.06);
+    box-shadow: 0 0 12px rgba(180, 200, 0, 0.05);
   }
 
   .badge-available::before {
@@ -157,7 +155,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #aacc00;
+    background: #A3E635;
     box-shadow: 0 0 8px rgba(180, 200, 0, 0.7);
     flex-shrink: 0;
   }
@@ -185,7 +183,7 @@
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 500;
-    color: #aacc00;
+    color: #A3E635;
     line-height: 1;
   }
 

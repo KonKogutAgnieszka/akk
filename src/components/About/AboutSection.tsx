@@ -70,7 +70,7 @@ export default function AboutSection() {
               <div key={number} className="flex gap-4">
                 <span
                   className="font-display font-semibold text-2xl leading-none mt-0.5"
-                  style={{ color: '#AACC00' }}
+                  style={{ color: '#A3E635' }}
                 >
                   {number}
                 </span>

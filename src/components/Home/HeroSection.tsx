@@ -24,9 +24,9 @@ export default function HeroSection() {
               <span className="hero-greeting block text-2xl md:text-[length:inherit]">
                 {t('greeting')}
               </span>
-              <span className="display-italic text-[56px] md:text-[96px]">{t('name')}</span>
+              <span className="display-italic text-[64px] md:text-[108px]">{t('name')}</span>
             </h1>
-            <p className="hero-subtitle text-sm md:text-base">{t('subtitle')}</p>
+            <p className="hero-subtitle">{t('subtitle')}</p>
           </div>
 
           <div className="flex gap-3 md:gap-4 items-center">
