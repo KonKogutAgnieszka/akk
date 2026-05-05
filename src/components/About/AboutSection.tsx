@@ -1,13 +1,15 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import SnakePath from './SnakePath';
 import Technology from '@/components/ui/Technology';
 import { useFadeInUp } from '@/hooks/useFadeInUp';
 
 export default function AboutSection() {
   const t = useTranslations('AboutSection');
+  const locale = useLocale();
+  const cvHref = locale === 'pl' ? '/assets/documents/CV_PL.pdf' : '/assets/documents/CV_ENG.pdf';
   const ref1 = useFadeInUp<HTMLDivElement>(0);
   const ref2 = useFadeInUp<HTMLDivElement>(150);
   const ref3 = useFadeInUp<HTMLDivElement>(300);
@@ -152,7 +154,7 @@ export default function AboutSection() {
             {t('ctaSubtitle')}
           </p>
           <div className="flex gap-4 mt-2">
-            <a ref={btnRef} href="/cv.pdf" className="btn btn-fill-lr">
+            <a ref={btnRef} href={cvHref} className="btn btn-fill-lr">
               {t('ctaDownload')}
             </a>
             <a href="/contact" className="btn btn-ghost">
