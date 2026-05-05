@@ -13,7 +13,7 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
   });
 
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
+    <Link href={`/blog/${post.id}`} className="group block">
       <article
         className="rounded-2xl overflow-hidden p-8 md:p-12 flex flex-col gap-4 transition-all duration-300 group-hover:brightness-110"
         style={{ background: 'var(--color-surface)' }}

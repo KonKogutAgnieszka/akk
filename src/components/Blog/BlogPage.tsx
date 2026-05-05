@@ -2,15 +2,28 @@ import type { Post } from '@/types/post';
 import FeaturedPost from './FeaturedPost';
 import PostCard from './PostCard';
 
-async function getPosts(): Promise<Post[]> {
-  const res = await fetch(`${process.env.API_URL}/posts`, { cache: 'no-store' });
-  if (!res.ok) return [];
-  return res.json();
+async function getPosts(): Promise<{ data: Post[] } | { error: string }> {
+  try {
+    const res = await fetch(`${process.env.API_URL}/posts`, { cache: 'no-store' });
+    if (!res.ok) return { error: `Błąd odpowiedzi z API (${res.status})` };
+    return { data: await res.json() };
+  } catch {
+    return { error: 'Brak połączenia z API' };
+  }
 }
 
 export default async function BlogPage() {
-  const posts = await getPosts();
-  const [featured, ...rest] = posts;
+  const result = await getPosts();
+
+  if ('error' in result) {
+    return (
+      <section className="section">
+        <p style={{ color: 'var(--color-text-muted)' }}>{result.error}</p>
+      </section>
+    );
+  }
+
+  const [featured, ...rest] = result.data;
 
   if (!featured) {
     return (

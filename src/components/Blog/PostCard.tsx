@@ -13,7 +13,7 @@ export default function PostCard({ post }: PostCardProps) {
   });
 
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
+    <Link href={`/blog/${post.id}`} className="group block">
       <article
         className="rounded-xl p-6 flex flex-col gap-3 h-full transition-all duration-300 group-hover:brightness-110"
         style={{ background: 'var(--color-surface)' }}
