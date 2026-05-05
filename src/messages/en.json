@@ -41,6 +41,8 @@
       { "number": "03", "title": "Performance & UX", "description": "Optimizing performance and user experience" },
       { "number": "04", "title": "Business analysis", "description": "Understanding needs and translating them into technical solutions" }
     ],
+    "workBio1": "I design and build applications end-to-end — from frontend architecture, through <accent>API</accent> and <accent>AI</accent> integrations, to deployment. I have experience working with both complex systems and internal tools.",
+    "workBio2": "I bridge development and UX through a background in graphic design — I see the product through the user's eyes, not just a developer's. I work primarily in <accent>React</accent>, <accent>Next.js</accent> and <accent>TypeScript</accent>, but I'm equally comfortable on the <green>backend</green> and with <green>databases</green>.",
     "ctaSubtitle": "See concrete experience",
     "ctaDownload": "Download CV",
     "ctaContact": "Contact"

@@ -21,7 +21,7 @@ export function useFadeInUp<T extends HTMLElement>(delay = 0) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     );
 
     observer.observe(el);

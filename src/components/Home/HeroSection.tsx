@@ -86,7 +86,7 @@ export default function HeroSection() {
 
       <div className="flex gap-12 pt-8">
         <div className="flex flex-wrap gap-6 md:gap-12 pt-6 md:pt-8">
-          <StatItem number="120+" label={t('stats.challengesTaken')} animation="count" />
+          <StatItem number="100+" label={t('stats.challengesTaken')} animation="count" />
           <StatItem number="100+" label={t('stats.problemsSolved')} animation="problems-solved" />
           <StatItem number="3+" label={t('stats.experienceYears')} animation="count" />
           <StatItem number="∞" label={t('stats.growth')} />

@@ -8,20 +8,17 @@ type TechnologyProps = {
 
 export default function Technology({ name, icon, initials }: TechnologyProps) {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div
-        className="w-12 h-12 rounded-full flex items-center justify-center"
-        style={{ background: 'var(--color-surface)' }}
-      >
+    <div className="tech-icon-wrapper flex flex-col items-center gap-1 cursor-pointer w-14">
+      <div className="w-8 h-8 flex items-center justify-center">
         {icon ? (
-          <Image src={icon} alt={name} width={24} height={24} />
+          <Image src={icon} alt={name} width={30} height={30} className="tech-icon" />
         ) : (
           <span className="text-xs font-semibold" style={{ color: 'var(--color-text-muted)' }}>
             {initials ?? name.slice(0, 2).toUpperCase()}
           </span>
         )}
       </div>
-      <span className="text-xs" style={{ color: 'var(--color-text-muted)' }}>
+      <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
         {name}
       </span>
     </div>

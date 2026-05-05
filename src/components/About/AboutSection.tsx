@@ -11,26 +11,17 @@ export default function AboutSection() {
   const ref1 = useFadeInUp<HTMLDivElement>(0);
   const ref2 = useFadeInUp<HTMLDivElement>(150);
   const ref3 = useFadeInUp<HTMLDivElement>(300);
-  const ref4 = useFadeInUp<HTMLDivElement>(450);
+  const ref4 = useFadeInUp<HTMLDivElement>(100);
+  const ref5 = useFadeInUp<HTMLDivElement>(0);
+  const ref6 = useFadeInUp<HTMLDivElement>(0);
+
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const btnRef = useRef<HTMLAnchorElement>(null);
 
-  useEffect(() => {
-    const btn = btnRef.current;
-    if (!btn) return;
-
-    function onScroll() {
-      const scrolledToBottom =
-        window.innerHeight + window.scrollY >= document.body.scrollHeight - 50;
-      if (scrolledToBottom) {
-        btn!.classList.add('is-filled');
-        window.removeEventListener('scroll', onScroll);
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  function handleSnakeComplete() {
+    btnRef.current?.classList.add('is-filled');
+  }
 
   const specializations = t.raw('specializations') as {
     number: string;
@@ -40,7 +31,19 @@ export default function AboutSection() {
 
   return (
     <section className="relative mt-8">
-      <SnakePath />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: '600px',
+          height: '600px',
+          top: '27%',
+          left: '-10%',
+          background: 'radial-gradient(circle, rgba(45, 212, 199, 0.06) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(40px)',
+        }}
+      />
+      <SnakePath onComplete={handleSnakeComplete} />
 
       <div className="relative flex flex-col gap-18" style={{ paddingBlock: '10%' }}>
         <div ref={ref1} className="w-full wide:w-[68%] mr-auto pb-28">
@@ -88,9 +91,32 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div ref={ref3} className="w-full  mr-auto wide:h-[220px]">
-          <h3 className="font-display text-4xl font-medium mb-10">{t('stackLabel')}</h3>
-          <div className="flex flex-wrap gap-8">
+        <div ref={ref5} className="w-full wide:w-[58%] relative section-glow pt-8 pb-8">
+          <p className="text-xl leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+            {t.rich('workBio1', {
+              accent: (chunks) => (
+                <span style={{ color: 'var(--color-accent)' }}>{chunks}</span>
+              ),
+            })}
+          </p>
+        </div>
+
+        <div ref={ref6} className="w-full wide:w-[58%] wide:ml-auto pt-16 pb-8">
+          <p className="text-xl leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+            {t.rich('workBio2', {
+              accent: (chunks) => (
+                <span style={{ color: '#A3E635' }}>{chunks}</span>
+              ),
+              green: (chunks) => (
+                <span style={{ color: '#A3E635' }}>{chunks}</span>
+              ),
+            })}
+          </p>
+        </div>
+
+        <div ref={ref3} className="w-full mr-auto wide:h-[260px]">
+          <h3 className="font-display text-4xl font-medium mb-8" style={{ color: 'var(--color-accent)' }}>{t('stackLabel')}</h3>
+          <div className="grid grid-cols-5 wide:grid-cols-9 gap-4 justify-items-center">
             {[
               { name: 'HTML', icon: '/assets/icons/html.svg' },
               { name: 'CSS', icon: '/assets/icons/css.svg' },
@@ -100,30 +126,31 @@ export default function AboutSection() {
               { name: 'Next.js', icon: '/assets/icons/next.svg' },
               { name: 'Tailwind', icon: '/assets/icons/tailwind.svg' },
               { name: 'Node.js', icon: '/assets/icons/node.svg' },
-              { name: 'REST API', initials: 'API' },
-              { name: 'TanStack', initials: 'TS' },
+              { name: 'Express', icon: '/assets/icons/express.svg' },
+              { name: 'NestJS', icon: '/assets/icons/nestjs.svg' },
+              { name: 'RESTAPI', icon: '/assets/icons/restapi.svg' },
+              { name: 'TanStack', icon: '/assets/icons/tanstack.svg' },
+              { name: 'Sass', icon: '/assets/icons/sass.svg' },
+
               { name: 'Redux', icon: '/assets/icons/redux.svg' },
               { name: 'Figma', icon: '/assets/icons/figma.svg' },
-            ].map(({ name, icon, initials }) => (
-              <Technology key={name} name={name} icon={icon} initials={initials} />
+              { name: 'Jest', icon: '/assets/icons/jest.svg' },
+              { name: 'Playwright', icon: '/assets/icons/playwright.svg' },
+            ].map(({ name, icon }) => (
+              <Technology key={name} name={name} icon={icon} />
             ))}
-            <div className="flex flex-col items-center justify-end gap-2 pb-1">
-              <span className="text-xl" style={{ color: 'var(--color-text-subtle)' }}>
-                ···
-              </span>
-            </div>
+            <div className="flex flex-col items-center justify-end gap-2 pb-1"></div>
           </div>
         </div>
 
         <div
           ref={ref4}
-          className="mt-18 w-full wide:w-[58%] wide:ml-auto flex flex-col items-center gap-6 py-8"
+          className="mt-9 w-full wide:w-[58%] wide:ml-auto relative section-glow flex flex-col items-end gap-6 py-8 pr-20"
           style={{ minHeight: '260px' }}
         >
-          <p className="font-display italic text-2xl" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="font-display italic text-2xl mt-[69px]" style={{ color: 'var(--color-text-muted)' }}>
             {t('ctaSubtitle')}
           </p>
-          <p className="font-display italic text-2xl">{t('ctaDownload')}</p>
           <div className="flex gap-4 mt-2">
             <a ref={btnRef} href="/cv.pdf" className="btn btn-fill-lr">
               {t('ctaDownload')}
