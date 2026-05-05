@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import RotatingTexts from '@/components/RotatingText.js';
+import RotatingTexts from '@/components/ui/RotatingText.js';
 import { StatItem } from './StatItem';
 import Button from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
@@ -24,9 +24,9 @@ export default function HeroSection() {
               <span className="hero-greeting block text-2xl md:text-[length:inherit]">
                 {t('greeting')}
               </span>
-              <span className="display-italic text-[56px] md:text-[96px]">{t('name')}</span>
+              <span className="display-italic text-[64px] md:text-[108px]">{t('name')}</span>
             </h1>
-            <p className="hero-subtitle text-sm md:text-base">{t('subtitle')}</p>
+            <p className="hero-subtitle">{t('subtitle')}</p>
           </div>
 
           <div className="flex gap-3 md:gap-4 items-center">
@@ -35,7 +35,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Image — below text on mobile, right side on desktop */}
         <div
           className="relative flex-shrink-0 self-center md:self-end mt-8 md:mt-0"
           style={{ overflow: 'visible' }}
@@ -85,10 +84,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="flex gap-12 pt-8">
         <div className="flex flex-wrap gap-6 md:gap-12 pt-6 md:pt-8">
-          <StatItem number="120+" label={t('stats.challengesTaken')} animation="count" />
+          <StatItem number="100+" label={t('stats.challengesTaken')} animation="count" />
           <StatItem number="100+" label={t('stats.problemsSolved')} animation="problems-solved" />
           <StatItem number="3+" label={t('stats.experienceYears')} animation="count" />
           <StatItem number="∞" label={t('stats.growth')} />

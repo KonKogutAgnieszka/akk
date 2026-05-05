@@ -1,5 +1,5 @@
-import { notFound } from 'next/navigation';
+import BlogPage from '@/components/Blog/BlogPage';
 
-export default function BlogPage() {
-  notFound();
+export default function Page() {
+  return <BlogPage />;
 }

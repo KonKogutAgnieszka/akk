@@ -3,7 +3,7 @@
     "badge": "Gotowa na nowe wyzwania",
     "greeting": "cześć, jestem",
     "name": "Agnieszka",
-    "subtitle": "Fullstack Developer",
+    "subtitle": "Frontend-focused Fullstack Developer",
     "btnPrimary": "poznajmy się",
     "btnGhost": "moje projekty",
     "rotating": [
@@ -36,11 +36,29 @@
     "specializationsLabel": "Specjalizacje",
     "stackLabel": "Stack",
     "specializations": [
-      { "number": "01", "title": "End-to-end development", "description": "Od UI po backend i logikę biznesową" },
-      { "number": "02", "title": "Logika backendowa i dane", "description": "Implementacja logiki oraz praca z danymi i jakością kodu" },
-      { "number": "03", "title": "Performance i UX", "description": "Optymalizacja działania i doświadczeń użytkownika" },
-      { "number": "04", "title": "Analiza biznesowa", "description": "Rozumienie potrzeb i przekładanie ich na rozwiązania techniczne" }
+      {
+        "number": "01",
+        "title": "End-to-end development",
+        "description": "Od UI po backend i logikę biznesową"
+      },
+      {
+        "number": "02",
+        "title": "Logika backendowa i dane",
+        "description": "Implementacja logiki oraz praca z danymi i jakością kodu"
+      },
+      {
+        "number": "03",
+        "title": "Performance i UX",
+        "description": "Optymalizacja działania i doświadczeń użytkownika"
+      },
+      {
+        "number": "04",
+        "title": "Analiza biznesowa",
+        "description": "Rozumienie potrzeb i przekładanie ich na rozwiązania techniczne"
+      }
     ],
+    "workBio1": "Projektuję i rozwijam aplikacje end-to-end - od architektury frontendu, przez integracje <accent>API</accent> i <accent>AI</accent>, po wdrożenie. Mam doświadczenie zarówno w pracy z rozbudowanymi systemami, jak i narzędziami wewnętrznymi.",
+    "workBio2": "Łączę development z UX dzięki backgroundowi graficznemu — widzę produkt oczami użytkownika, nie tylko dewelopera. Pracuję głównie w <accent>React</accent>, <accent>Next.js</accent> i <accent>TypeScript</accent>, ale swobodnie poruszam się również po <green>backendzie</green> i <green>bazach danych</green>.",
     "ctaSubtitle": "Zobacz konkretne doświadczenie",
     "ctaDownload": "Pobierz CV",
     "ctaContact": "Kontakt"

@@ -10,7 +10,7 @@ export default async function NotFound() {
       <div className="flex flex-col items-center gap-4">
         <span
           className="font-display font-medium"
-          style={{ fontSize: '120px', color: '#AACC00', lineHeight: 1 }}
+          style={{ fontSize: '120px', color: '#A3E635', lineHeight: 1 }}
         >
           404
         </span>

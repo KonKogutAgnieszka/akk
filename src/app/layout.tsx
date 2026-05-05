@@ -1,8 +1,9 @@
 import React from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getLocale } from 'next-intl/server';
-import '@/app/globals.css';
-import Header from '@/components/Header';
+import './globals.css';
+import Header from '@/components/Layout/Header';
+import Footer from '@/components/Layout/Footer';
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
@@ -15,6 +16,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <div className="max-w-5xl mx-auto px-6">
             <Header />
             <main>{children}</main>
+            <Footer />
           </div>
         </NextIntlClientProvider>
       </body>

@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import LogoBrand from '../ui/LogoBrand';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
-import LangSwitcher from './ui/LangSwitcher';
+import LangSwitcher from '../ui/LangSwitcher';
 
 export default function Header() {
   const pathname = usePathname();
@@ -32,14 +32,7 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between">
-      <Link
-        href="/"
-        className="flex items-center gap-3 z-50"
-        style={{ color: 'var(--color-text)' }}
-      >
-        <Image src="/assets/images/logo.svg" alt="logo" width={32} height={32} />
-        <span className="font-display text-lg font-medium">Agnieszka Koń-Kogut</span>
-      </Link>
+      <LogoBrand />
 
       <nav className="hidden md:flex items-center gap-14">
         {navLinks.map(({ href, label }) => (
