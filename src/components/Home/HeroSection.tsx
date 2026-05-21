@@ -15,10 +15,6 @@ export default function HeroSection() {
     <section className="section flex flex-col min-h-[75vh] justify-center p-0 mt-10">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-12">
         <div className="flex flex-col gap-4 md:gap-6 md:max-w-xl">
-          <div>
-            <span className="badge-available">{t('badge')}</span>
-          </div>
-
           <div className="flex flex-col gap-1 md:gap-2">
             <h1 className="font-display leading-none">
               <span className="hero-greeting block text-2xl md:text-[length:inherit]">

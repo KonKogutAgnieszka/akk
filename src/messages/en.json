@@ -36,16 +36,36 @@
     "specializationsLabel": "Specializations",
     "stackLabel": "Stack",
     "specializations": [
-      { "number": "01", "title": "End-to-end development", "description": "From UI to backend and business logic" },
-      { "number": "02", "title": "Backend logic & data", "description": "Implementing logic and working with data and code quality" },
-      { "number": "03", "title": "Performance & UX", "description": "Optimizing performance and user experience" },
-      { "number": "04", "title": "Business analysis", "description": "Understanding needs and translating them into technical solutions" }
+      {
+        "number": "01",
+        "title": "End-to-end development",
+        "description": "I build apps from UX/UI design and integrations, all the way to deployment and monitoring."
+      },
+      {
+        "number": "02",
+        "title": "Logic, Data & Performance",
+        "description": "I design scalable apps with seamless state, stable APIs, and high performance."
+      },
+      {
+        "number": "03",
+        "title": "Performance & UX",
+        "description": "I design scalable apps with seamless state management, stable APIs, and high performance."
+      },
+      {
+        "number": "04",
+        "title": "Analysis & Product Thinking",
+        "description": "I decode business goals and align with users to transform complexity into clean, simple solutions."
+      }
     ],
-    "workBio1": "I design and build applications end-to-end — from frontend architecture, through <accent>API</accent> and <accent>AI</accent> integrations, to deployment. I have experience working with both complex systems and internal tools.",
-    "workBio2": "I bridge development and UX through a background in graphic design — I see the product through the user's eyes, not just a developer's. I work primarily in <accent>React</accent>, <accent>Next.js</accent> and <accent>TypeScript</accent>, but I'm equally comfortable on the <green>backend</green> and with <green>databases</green>.",
-    "ctaSubtitle": "See concrete experience",
+    "workBio1": "I develop applications through their entire lifecycle — from frontend architecture and integrations with APIs and AI models, to final deployment. My experience spans working with extensive commercial systems as well as implementing internal tools that streamline business processes.",
+    "workBio2": "I look at a product through the eyes of the user, not just the developer. I work primarily with <accent>React</accent>, <accent>Next.js</accent>, and <accent>TypeScript</accent>, but I move smoothly across the <green>backend</green> and <green>databases</green> — allowing me to seamlessly translate complex system logic into intuitive interfaces.",
+    "ctaSubtitle": "Interested in working together? See the complete overview of my professional experience.",
     "ctaDownload": "Download CV",
     "ctaContact": "Contact"
+  },
+  "Blog": {
+    "featured": "Featured",
+    "read": "Read"
   },
   "NotFound": {
     "label": "under construction",

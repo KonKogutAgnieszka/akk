@@ -9,7 +9,10 @@ import { useFadeInUp } from '@/hooks/useFadeInUp';
 export default function AboutSection() {
   const t = useTranslations('AboutSection');
   const locale = useLocale();
-  const cvHref = locale === 'pl' ? '/assets/documents/CV_PL.pdf' : '/assets/documents/CV_ENG.pdf';
+  const cvHref =
+    locale === 'pl'
+      ? '/assets/documents/Agnieszka_Kon_Kogut_pl.pdf'
+      : '/assets/documents/Agnieszka_Kon_Kogut.pdf';
   const ref1 = useFadeInUp<HTMLDivElement>(0);
   const ref2 = useFadeInUp<HTMLDivElement>(150);
   const ref3 = useFadeInUp<HTMLDivElement>(300);
@@ -17,7 +20,9 @@ export default function AboutSection() {
   const ref5 = useFadeInUp<HTMLDivElement>(0);
   const ref6 = useFadeInUp<HTMLDivElement>(0);
 
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const btnRef = useRef<HTMLAnchorElement>(null);
 
@@ -64,13 +69,27 @@ export default function AboutSection() {
         </div>
 
         <div ref={ref2} className="w-full wide:ml-auto wide:h-[220px] relative">
+          <img
+            src="/assets/images/bg1.svg"
+            alt=""
+            aria-hidden="true"
+            className="absolute pointer-events-none select-none"
+            style={{
+              right: '-300px',
+              top: '50%',
+              transform: 'translateY(calc(-150% + 300px))',
+              width: '800px',
+              opacity: 0.08,
+              zIndex: 0,
+            }}
+          />
           <span
             className="absolute top-0 right-0 font-display italic text-2xl"
             style={{ color: 'var(--color-accent)' }}
           >
             {t('specializationsLabel')}
           </span>
-          <div className="grid grid-cols-2 gap-x-12 gap-y-8 mt-12">
+          <div className="grid grid-cols-2 gap-x-12 gap-y-6 mt-10">
             {specializations.map(({ number, title, description }) => (
               <div key={number} className="flex gap-4">
                 <span
@@ -93,31 +112,30 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div ref={ref5} className="w-full wide:w-[58%] relative section-glow pt-8 pb-8">
+        <div ref={ref5} className="w-full wide:w-[58%] relative section-glow pt-8 pb-6">
           <p className="text-xl leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
             {t.rich('workBio1', {
-              accent: (chunks) => (
-                <span style={{ color: 'var(--color-accent)' }}>{chunks}</span>
-              ),
+              accent: (chunks) => <span style={{ color: 'var(--color-accent)' }}>{chunks}</span>,
             })}
           </p>
         </div>
 
-        <div ref={ref6} className="w-full wide:w-[58%] wide:ml-auto pt-16 pb-8">
+        <div ref={ref6} className="w-full wide:w-[58%] wide:ml-auto pt-8 pb-6">
           <p className="text-xl leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
             {t.rich('workBio2', {
-              accent: (chunks) => (
-                <span style={{ color: '#A3E635' }}>{chunks}</span>
-              ),
-              green: (chunks) => (
-                <span style={{ color: '#A3E635' }}>{chunks}</span>
-              ),
+              accent: (chunks) => <span style={{ color: '#A3E635' }}>{chunks}</span>,
+              green: (chunks) => <span style={{ color: '#A3E635' }}>{chunks}</span>,
             })}
           </p>
         </div>
 
-        <div ref={ref3} className="w-full mr-auto wide:h-[260px]">
-          <h3 className="font-display text-4xl font-medium mb-8" style={{ color: 'var(--color-accent)' }}>{t('stackLabel')}</h3>
+        <div ref={ref3} className="w-full mr-auto wide:h-[220px]">
+          <h3
+            className="font-display text-4xl font-medium mb-8"
+            style={{ color: 'var(--color-accent)' }}
+          >
+            {t('stackLabel')}
+          </h3>
           <div className="grid grid-cols-5 wide:grid-cols-9 gap-4 justify-items-center">
             {[
               { name: 'HTML', icon: '/assets/icons/html.svg' },
@@ -150,7 +168,10 @@ export default function AboutSection() {
           className="mt-9 w-full wide:w-[58%] wide:ml-auto relative section-glow flex flex-col items-end gap-6 py-8 pr-20"
           style={{ minHeight: '260px' }}
         >
-          <p className="font-display italic text-2xl mt-[69px]" style={{ color: 'var(--color-text-muted)' }}>
+          <p
+            className="font-display italic text-2xl mt-7"
+            style={{ color: 'var(--color-text-muted)' }}
+          >
             {t('ctaSubtitle')}
           </p>
           <div className="flex gap-4 mt-2">

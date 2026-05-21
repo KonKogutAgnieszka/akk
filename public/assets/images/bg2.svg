@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="13">
+  <text x="40" y="50" fill="#6b7280">// hooks/useProduct.ts</text>
+
+  <text x="20" y="80" fill="#4b5563">1</text>
+  <text x="40" y="80">
+    <tspan fill="#c084fc">import</tspan>
+    <tspan fill="#e5e7eb"> { useState, useEffect } </tspan>
+    <tspan fill="#c084fc">from</tspan>
+    <tspan fill="#86efac"> 'react'</tspan>
+  </text>
+
+  <text x="20" y="100" fill="#4b5563">2</text>
+
+  <text x="20" y="120" fill="#4b5563">3</text>
+  <text x="40" y="120">
+    <tspan fill="#c084fc">export function</tspan>
+    <tspan fill="#fde047"> useProduct</tspan>
+    <tspan fill="#e5e7eb">(id: </tspan>
+    <tspan fill="#60a5fa">string</tspan>
+    <tspan fill="#e5e7eb">) {</tspan>
+  </text>
+
+  <text x="20" y="140" fill="#4b5563">4</text>
+  <text x="60" y="140">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> [product, setProduct] = </tspan>
+    <tspan fill="#fde047">useState</tspan>
+    <tspan fill="#94a3b8">&lt;</tspan>
+    <tspan fill="#60a5fa">any</tspan>
+    <tspan fill="#94a3b8">&gt;</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#f472b6">null</tspan>
+    <tspan fill="#e5e7eb">)</tspan>
+  </text>
+
+  <text x="20" y="160" fill="#4b5563">5</text>
+  <text x="60" y="160">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> [loading, setLoading] = </tspan>
+    <tspan fill="#fde047">useState</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#f472b6">true</tspan>
+    <tspan fill="#e5e7eb">)</tspan>
+  </text>
+
+  <text x="20" y="180" fill="#4b5563">6</text>
+  <text x="60" y="180">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> [error, setError] = </tspan>
+    <tspan fill="#fde047">useState</tspan>
+    <tspan fill="#94a3b8">&lt;</tspan>
+    <tspan fill="#60a5fa">string</tspan>
+    <tspan fill="#94a3b8"> | </tspan>
+    <tspan fill="#f472b6">null</tspan>
+    <tspan fill="#94a3b8">&gt;</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#f472b6">null</tspan>
+    <tspan fill="#e5e7eb">)</tspan>
+  </text>
+
+  <text x="20" y="200" fill="#4b5563">7</text>
+
+  <text x="20" y="220" fill="#4b5563">8</text>
+  <text x="60" y="220">
+    <tspan fill="#fde047">useEffect</tspan>
+    <tspan fill="#e5e7eb">(() =&gt; {</tspan>
+  </text>
+
+  <text x="20" y="240" fill="#4b5563">9</text>
+  <text x="80" y="240">
+    <tspan fill="#c084fc">async function</tspan>
+    <tspan fill="#fde047"> fetchProduct</tspan>
+    <tspan fill="#e5e7eb">() {</tspan>
+  </text>
+
+  <text x="20" y="260" fill="#4b5563">10</text>
+  <text x="100" y="260">
+    <tspan fill="#c084fc">try</tspan>
+    <tspan fill="#e5e7eb"> {</tspan>
+  </text>
+
+  <text x="20" y="280" fill="#4b5563">11</text>
+  <text x="120" y="280">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> res = </tspan>
+    <tspan fill="#c084fc">await</tspan>
+    <tspan fill="#fde047"> fetch</tspan>
+    <tspan fill="#86efac">('/api/products/${id}')</tspan>
+  </text>
+
+  <text x="20" y="300" fill="#4b5563">12</text>
+  <text x="120" y="300">
+    <tspan fill="#c084fc">if</tspan>
+    <tspan fill="#e5e7eb"> (!res.ok) </tspan>
+    <tspan fill="#c084fc">throw new</tspan>
+    <tspan fill="#60a5fa"> Error</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#86efac">'Failed to fetch'</tspan>
+    <tspan fill="#e5e7eb">)</tspan>
+  </text>
+
+  <text x="20" y="320" fill="#4b5563">13</text>
+  <text x="120" y="320">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> data = </tspan>
+    <tspan fill="#c084fc">await</tspan>
+    <tspan fill="#e5e7eb"> res.</tspan>
+    <tspan fill="#fde047">json</tspan>
+    <tspan fill="#e5e7eb">()</tspan>
+  </text>
+
+  <text x="20" y="340" fill="#4b5563">14</text>
+  <text x="120" y="340">
+    <tspan fill="#fde047">setProduct</tspan>
+    <tspan fill="#e5e7eb">(data)</tspan>
+  </text>
+
+  <text x="20" y="360" fill="#4b5563">15</text>
+  <text x="100" y="360">
+    <tspan fill="#e5e7eb">} </tspan>
+    <tspan fill="#c084fc">catch</tspan>
+    <tspan fill="#e5e7eb"> (err: </tspan>
+    <tspan fill="#60a5fa">any</tspan>
+    <tspan fill="#e5e7eb">) {</tspan>
+  </text>
+
+  <text x="20" y="380" fill="#4b5563">16</text>
+  <text x="120" y="380">
+    <tspan fill="#fde047">setError</tspan>
+    <tspan fill="#e5e7eb">(err.message)</tspan>
+  </text>
+
+  <text x="20" y="400" fill="#4b5563">17</text>
+  <text x="100" y="400">
+    <tspan fill="#e5e7eb">} </tspan>
+    <tspan fill="#c084fc">finally</tspan>
+    <tspan fill="#e5e7eb"> {</tspan>
+  </text>
+
+  <text x="20" y="420" fill="#4b5563">18</text>
+  <text x="120" y="420">
+    <tspan fill="#fde047">setLoading</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#f472b6">false</tspan>
+    <tspan fill="#e5e7eb">)</tspan>
+  </text>
+
+  <text x="20" y="440" fill="#4b5563">19</text>
+  <text x="100" y="440" fill="#e5e7eb">}</text>
+
+  <text x="20" y="460" fill="#4b5563">20</text>
+  <text x="80" y="460" fill="#e5e7eb">}</text>
+
+  <text x="20" y="480" fill="#4b5563">21</text>
+  <text x="80" y="480">
+    <tspan fill="#fde047">fetchProduct</tspan>
+    <tspan fill="#e5e7eb">()</tspan>
+  </text>
+
+  <text x="20" y="500" fill="#4b5563">22</text>
+  <text x="60" y="500" fill="#e5e7eb">}, [id])</text>
+
+  <text x="20" y="520" fill="#4b5563">23</text>
+
+  <text x="20" y="540" fill="#4b5563">24</text>
+  <text x="60" y="540">
+    <tspan fill="#c084fc">return</tspan>
+    <tspan fill="#e5e7eb"> { product, loading, error }</tspan>
+  </text>
+
+  <text x="20" y="560" fill="#4b5563">25</text>
+  <text x="40" y="560" fill="#e5e7eb">}</text>
+</svg>

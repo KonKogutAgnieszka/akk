@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="13">
+  <text x="40" y="50" fill="#6b7280">// app/api/articles/route.ts</text>
+
+  <text x="20" y="80" fill="#4b5563">1</text>
+  <text x="40" y="80">
+    <tspan fill="#c084fc">import</tspan>
+    <tspan fill="#e5e7eb"> { </tspan>
+    <tspan fill="#fde047">NextResponse</tspan>
+    <tspan fill="#e5e7eb"> } </tspan>
+    <tspan fill="#c084fc">from</tspan>
+    <tspan fill="#86efac"> 'next/server'</tspan>
+  </text>
+
+  <text x="20" y="100" fill="#4b5563">2</text>
+  <text x="40" y="100">
+    <tspan fill="#c084fc">import</tspan>
+    <tspan fill="#e5e7eb"> { db } </tspan>
+    <tspan fill="#c084fc">from</tspan>
+    <tspan fill="#86efac"> '@/lib/db'</tspan>
+  </text>
+
+  <text x="20" y="120" fill="#4b5563">3</text>
+
+  <text x="20" y="140" fill="#4b5563">4</text>
+  <text x="40" y="140">
+    <tspan fill="#c084fc">export async function</tspan>
+    <tspan fill="#fde047"> GET</tspan>
+    <tspan fill="#e5e7eb">(request: </tspan>
+    <tspan fill="#60a5fa">Request</tspan>
+    <tspan fill="#e5e7eb">) {</tspan>
+  </text>
+
+  <text x="20" y="160" fill="#4b5563">5</text>
+  <text x="60" y="160">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> searchParams = </tspan>
+    <tspan fill="#c084fc">new</tspan>
+    <tspan fill="#60a5fa"> URL</tspan>
+    <tspan fill="#e5e7eb">(request.url)</tspan>
+  </text>
+
+  <text x="20" y="180" fill="#4b5563">6</text>
+  <text x="60" y="180">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> category = searchParams.</tspan>
+    <tspan fill="#fde047">get</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#86efac">'category'</tspan>
+    <tspan fill="#e5e7eb">)</tspan>
+  </text>
+
+  <text x="20" y="200" fill="#4b5563">7</text>
+  <text x="60" y="200">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> limit = searchParams.</tspan>
+    <tspan fill="#fde047">get</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#86efac">'limit'</tspan>
+    <tspan fill="#e5e7eb">) || </tspan>
+    <tspan fill="#86efac">'10'</tspan>
+  </text>
+
+  <text x="20" y="220" fill="#4b5563">8</text>
+
+  <text x="20" y="240" fill="#4b5563">9</text>
+  <text x="60" y="240">
+    <tspan fill="#c084fc">try</tspan>
+    <tspan fill="#e5e7eb"> {</tspan>
+  </text>
+
+  <text x="20" y="260" fill="#4b5563">10</text>
+  <text x="80" y="260">
+    <tspan fill="#c084fc">const</tspan>
+    <tspan fill="#e5e7eb"> articles = </tspan>
+    <tspan fill="#c084fc">await</tspan>
+    <tspan fill="#e5e7eb"> db.article.</tspan>
+    <tspan fill="#fde047">findMany</tspan>
+    <tspan fill="#e5e7eb">({</tspan>
+  </text>
+
+  <text x="20" y="280" fill="#4b5563">11</text>
+  <text x="100" y="280">
+    <tspan fill="#fde047">where</tspan>
+    <tspan fill="#e5e7eb">: {</tspan>
+  </text>
+
+  <text x="20" y="300" fill="#4b5563">12</text>
+  <text x="120" y="300">
+    <tspan fill="#fde047">status</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#86efac">'published'</tspan>
+    <tspan fill="#e5e7eb">,</tspan>
+  </text>
+
+  <text x="20" y="320" fill="#4b5563">13</text>
+  <text x="120" y="320">
+    <tspan fill="#fde047">category</tspan>
+    <tspan fill="#e5e7eb">: category || </tspan>
+    <tspan fill="#f472b6">undefined</tspan>
+    <tspan fill="#e5e7eb">,</tspan>
+  </text>
+
+  <text x="20" y="340" fill="#4b5563">14</text>
+  <text x="100" y="340" fill="#e5e7eb">},</text>
+
+  <text x="20" y="360" fill="#4b5563">15</text>
+  <text x="100" y="360">
+    <tspan fill="#fde047">take</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#fde047">parseInt</tspan>
+    <tspan fill="#e5e7eb">(limit),</tspan>
+  </text>
+
+  <text x="20" y="380" fill="#4b5563">16</text>
+  <text x="100" y="380">
+    <tspan fill="#fde047">orderBy</tspan>
+    <tspan fill="#e5e7eb">: { </tspan>
+    <tspan fill="#fde047">createdAt</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#86efac">'desc'</tspan>
+    <tspan fill="#e5e7eb"> },</tspan>
+  </text>
+
+  <text x="20" y="400" fill="#4b5563">17</text>
+  <text x="80" y="400" fill="#e5e7eb">})</text>
+
+  <text x="20" y="420" fill="#4b5563">18</text>
+
+  <text x="20" y="440" fill="#4b5563">19</text>
+  <text x="80" y="440">
+    <tspan fill="#c084fc">return</tspan>
+    <tspan fill="#e5e7eb"> NextResponse.</tspan>
+    <tspan fill="#fde047">json</tspan>
+    <tspan fill="#e5e7eb">({ data: articles })</tspan>
+  </text>
+
+  <text x="20" y="460" fill="#4b5563">20</text>
+  <text x="60" y="460">
+    <tspan fill="#e5e7eb">} </tspan>
+    <tspan fill="#c084fc">catch</tspan>
+    <tspan fill="#e5e7eb"> (error) {</tspan>
+  </text>
+
+  <text x="20" y="480" fill="#4b5563">21</text>
+  <text x="80" y="480">
+    <tspan fill="#c084fc">return</tspan>
+    <tspan fill="#e5e7eb"> NextResponse.</tspan>
+    <tspan fill="#fde047">json</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+  </text>
+
+  <text x="20" y="500" fill="#4b5563">22</text>
+  <text x="100" y="500">
+    <tspan fill="#e5e7eb">{ error: </tspan>
+    <tspan fill="#86efac">'Internal error'</tspan>
+    <tspan fill="#e5e7eb"> },</tspan>
+  </text>
+
+  <text x="20" y="520" fill="#4b5563">23</text>
+  <text x="100" y="520">
+    <tspan fill="#e5e7eb">{ status: </tspan>
+    <tspan fill="#fb923c">500</tspan>
+    <tspan fill="#e5e7eb"> }</tspan>
+  </text>
+
+  <text x="20" y="540" fill="#4b5563">24</text>
+  <text x="80" y="540" fill="#e5e7eb">)</text>
+
+  <text x="20" y="560" fill="#4b5563">25</text>
+  <text x="60" y="560" fill="#e5e7eb">}</text>
+
+  <text x="20" y="580" fill="#4b5563">26</text>
+  <text x="40" y="580" fill="#e5e7eb">}</text>
+</svg>

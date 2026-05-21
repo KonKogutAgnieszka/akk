@@ -1,9 +1,16 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
-export default function middleware() {
+export default function middleware(request: NextRequest) {
+  const token = request.cookies.get('token')?.value;
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith('/admin') && !token) {
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  matcher: ['/admin/:path*'],
 };
