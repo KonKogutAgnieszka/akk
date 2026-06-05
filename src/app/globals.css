@@ -151,25 +151,9 @@
     transform: translateY(-1px);
   }
 
-  .badge-available {
-    @apply inline-flex items-center gap-2 px-5 py-2 text-xs font-medium;
-    background: rgba(180, 200, 0, 0.03);
-    color: #a3e635;
+  .badge {
+    background: #342534;
     border-radius: 999px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    box-shadow: 0 0 12px rgba(180, 200, 0, 0.05);
-  }
-
-  .badge-available::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #a3e635;
-    box-shadow: 0 0 8px rgba(180, 200, 0, 0.7);
-    flex-shrink: 0;
   }
 
   .card {
