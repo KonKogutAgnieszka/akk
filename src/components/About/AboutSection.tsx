@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import SnakePath from './SnakePath';
 import Technology from '@/components/ui/Technology';
+import { TechnologyKey } from '@/data/technologies';
 import { useFadeInUp } from '@/hooks/useFadeInUp';
 
 export default function AboutSection() {
@@ -137,29 +138,16 @@ export default function AboutSection() {
             {t('stackLabel')}
           </h3>
           <div className="grid grid-cols-5 wide:grid-cols-9 gap-4 justify-items-center">
-            {[
-              { name: 'HTML', icon: '/assets/icons/html.svg' },
-              { name: 'CSS', icon: '/assets/icons/css.svg' },
-              { name: 'JavaScript', icon: '/assets/icons/javascript.svg' },
-              { name: 'TypeScript', icon: '/assets/icons/typescript.svg' },
-              { name: 'React', icon: '/assets/icons/react.svg' },
-              { name: 'Next.js', icon: '/assets/icons/next.svg' },
-              { name: 'Tailwind', icon: '/assets/icons/tailwind.svg' },
-              { name: 'Node.js', icon: '/assets/icons/node.svg' },
-              { name: 'Express', icon: '/assets/icons/express.svg' },
-              { name: 'NestJS', icon: '/assets/icons/nestjs.svg' },
-              { name: 'RESTAPI', icon: '/assets/icons/restapi.svg' },
-              { name: 'TanStack', icon: '/assets/icons/tanstack.svg' },
-              { name: 'Sass', icon: '/assets/icons/sass.svg' },
-
-              { name: 'Redux', icon: '/assets/icons/redux.svg' },
-              { name: 'Figma', icon: '/assets/icons/figma.svg' },
-              { name: 'Jest', icon: '/assets/icons/jest.svg' },
-              { name: 'Playwright', icon: '/assets/icons/playwright.svg' },
-            ].map(({ name, icon }) => (
-              <Technology key={name} name={name} icon={icon} />
+            {(
+              [
+                'html', 'css', 'javascript', 'typescript', 'react',
+                'nextjs', 'tailwind', 'nodejs', 'express', 'nestjs',
+                'restapi', 'tanstack', 'sass', 'redux', 'figma',
+                'jest', 'playwright',
+              ] as TechnologyKey[]
+            ).map((key) => (
+              <Technology key={key} technologyKey={key} />
             ))}
-            <div className="flex flex-col items-center justify-end gap-2 pb-1"></div>
           </div>
         </div>
 

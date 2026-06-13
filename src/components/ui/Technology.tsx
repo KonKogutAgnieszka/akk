@@ -1,13 +1,14 @@
 import Image from 'next/image';
+import { technologies, TechnologyKey } from '@/data/technologies';
 
 type TechnologyProps = {
+  technologyKey: TechnologyKey;
   variant?: 'icon' | 'badge';
-  name: string;
-  icon?: string;
-  initials?: string;
 };
 
-export default function Technology({ variant = 'icon', name, icon, initials }: TechnologyProps) {
+export default function Technology({ technologyKey, variant = 'icon' }: TechnologyProps) {
+  const { name, icon, initials } = technologies[technologyKey];
+
   return (
     <div
       className={`tech-icon-wrapper flex gap-1 items-center ${variant === 'icon' ? 'flex-col w-14' : 'flex-row h-8 px-2 badge'} cursor-pointer`}
@@ -19,7 +20,7 @@ export default function Technology({ variant = 'icon', name, icon, initials }: T
             alt={name}
             width={variant === 'icon' ? 30 : 20}
             height={variant === 'icon' ? 30 : 20}
-            className={`tech-icon`}
+            className="tech-icon"
           />
         ) : (
           <span className="text-xs font-semibold" style={{ color: 'var(--color-text-muted)' }}>
