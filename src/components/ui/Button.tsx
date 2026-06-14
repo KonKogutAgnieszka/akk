@@ -7,6 +7,7 @@ type BaseProps = {
   rightIcon?: string | React.ReactNode;
   variant?: Variant;
   size?: Size;
+  className?: string;
 };
 
 type ButtonProps = BaseProps & {
@@ -23,9 +24,9 @@ type LinkProps = BaseProps & {
 type Props = ButtonProps | LinkProps;
 
 export default function Button(props: Props) {
-  const { text, leftIcon, rightIcon, variant = 'primary', size = 'md' } = props;
+  const { text, leftIcon, rightIcon, variant = 'primary', size = 'md', className: extraClass } = props;
   const px = sizeIcon[size];
-  const className = `btn ${sizeClass[size]} ${variantClass[variant]} cursor-pointer`;
+  const className = `btn ${sizeClass[size]} ${variantClass[variant]} cursor-pointer${extraClass ? ` ${extraClass}` : ''}`;
 
   const iconStyle = (src: string): React.CSSProperties => ({
     display: 'inline-block',

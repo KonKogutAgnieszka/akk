@@ -209,7 +209,8 @@
       background-size 0.4s ease,
       color 0.4s ease;
   }
-  .sweep-btn:hover {
+  .sweep-btn:hover,
+  .sweep-btn.is-filled {
     background-size: 100% 100%;
     color: var(--color-bg);
   }
