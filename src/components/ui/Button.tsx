@@ -1,11 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Variant, Size, variantClass, sizeClass, sizeIcon } from '@/components/ui/buttonConfig';
 
 type BaseProps = {
   text: string;
-  leftIcon?: string;
-  rightIcon?: string;
+  leftIcon?: string | React.ReactNode;
+  rightIcon?: string | React.ReactNode;
   variant?: Variant;
   size?: Size;
 };
@@ -28,11 +27,30 @@ export default function Button(props: Props) {
   const px = sizeIcon[size];
   const className = `btn ${sizeClass[size]} ${variantClass[variant]} cursor-pointer`;
 
+  const iconStyle = (src: string): React.CSSProperties => ({
+    display: 'inline-block',
+    width: px,
+    height: px,
+    backgroundColor: 'currentColor',
+    maskImage: `url(${src})`,
+    WebkitMaskImage: `url(${src})`,
+    maskSize: 'contain',
+    WebkitMaskSize: 'contain',
+    maskRepeat: 'no-repeat',
+    WebkitMaskRepeat: 'no-repeat',
+    maskPosition: 'center',
+    WebkitMaskPosition: 'center',
+    flexShrink: 0,
+  });
+
+  const renderIcon = (icon: string | React.ReactNode) =>
+    typeof icon === 'string' ? <span style={iconStyle(icon)} aria-hidden /> : icon;
+
   const content = (
     <>
-      {leftIcon && <Image src={leftIcon} alt="" width={px} height={px} aria-hidden />}
+      {leftIcon && renderIcon(leftIcon)}
       {text}
-      {rightIcon && <Image src={rightIcon} alt="" width={px} height={px} aria-hidden />}
+      {rightIcon && renderIcon(rightIcon)}
     </>
   );
 
