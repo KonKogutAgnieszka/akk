@@ -116,11 +116,21 @@
     color: #f2b8d0;
   }
 
-/*▶️ buttons */
+  /*▶️ buttons */
 
   .btn {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all;
     transition: all var(--transition-base);
+  }
+
+  .btn-sm {
+    @apply gap-1.5 px-4 py-2 text-xs;
+  }
+  .btn-md {
+    @apply gap-2 px-6 py-3 text-sm;
+  }
+  .btn-lg {
+    @apply gap-2.5 px-8 py-3.5 text-base;
   }
 
   .primary-btn {
