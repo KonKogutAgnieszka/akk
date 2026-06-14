@@ -26,7 +26,7 @@ export default function HeroSection() {
 
           <div className="flex gap-3 md:gap-4 items-center">
             <Button text={t('btnPrimary')} variant="primary" />
-            <Button text={t('btnGhost')} variant="ghost" />
+            <Button text={t('btnGhost')} variant="secondary-outline" />
           </div>
         </div>
 

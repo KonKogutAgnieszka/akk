@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import SnakePath from './SnakePath';
 import Technology from '@/components/ui/Technology';
+import Button from '@/components/ui/Button';
 import { TechnologyKey } from '@/data/technologies';
 import { useFadeInUp } from '@/hooks/useFadeInUp';
 
@@ -25,11 +26,7 @@ export default function AboutSection() {
     window.scrollTo(0, 0);
   }, []);
 
-  const btnRef = useRef<HTMLAnchorElement>(null);
-
-  function handleSnakeComplete() {
-    btnRef.current?.classList.add('is-filled');
-  }
+  const [snakeDone, setSnakeDone] = useState(false);
 
   const specializations = t.raw('specializations') as {
     number: string;
@@ -51,7 +48,7 @@ export default function AboutSection() {
           filter: 'blur(40px)',
         }}
       />
-      <SnakePath onComplete={handleSnakeComplete} />
+      <SnakePath onComplete={() => setSnakeDone(true)} />
 
       <div className="relative flex flex-col gap-18" style={{ paddingBlock: '10%' }}>
         <div ref={ref1} className="w-full wide:w-[68%] mr-auto pb-28">
@@ -76,9 +73,9 @@ export default function AboutSection() {
             aria-hidden="true"
             className="absolute pointer-events-none select-none"
             style={{
-              right: '-300px',
+              right: 0,
               top: '50%',
-              transform: 'translateY(calc(-150% + 300px))',
+              transform: 'translateY(calc(-150% + 300px)) translateX(30%)',
               width: '800px',
               opacity: 0.08,
               zIndex: 0,
@@ -163,12 +160,8 @@ export default function AboutSection() {
             {t('ctaSubtitle')}
           </p>
           <div className="flex gap-4 mt-2">
-            <a ref={btnRef} href={cvHref} className="btn btn-fill-lr">
-              {t('ctaDownload')}
-            </a>
-            <a href="/contact" className="btn btn-ghost">
-              {t('ctaContact')}
-            </a>
+            <Button href={cvHref} text={t('ctaDownload')} variant="sweep" newTab className={snakeDone ? 'is-filled' : ''} />
+            <Button href="/contact" text={t('ctaContact')} variant="primary-outline" />
           </div>
         </div>
       </div>

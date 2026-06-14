@@ -87,7 +87,7 @@ H974
 A160 160 0 0 1 974 1601.4
 H102
 A160 160 0 0 0 102 1921.4
-H752.12"
+H742.12"
         stroke="#D3CDD5"
         strokeOpacity="0.5"
         strokeWidth="1"
