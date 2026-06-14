@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import SnakePath from './SnakePath';
 import Technology from '@/components/ui/Technology';
@@ -67,16 +68,17 @@ export default function AboutSection() {
         </div>
 
         <div ref={ref2} className="w-full wide:ml-auto wide:h-[220px] relative">
-          <img
+          <Image
             src="/assets/images/bg1.svg"
             alt=""
-            aria-hidden="true"
+            aria-hidden={true}
+            width={800}
+            height={800}
             className="absolute pointer-events-none select-none"
             style={{
               right: 0,
               top: '50%',
               transform: 'translateY(calc(-150% + 300px)) translateX(30%)',
-              width: '800px',
               opacity: 0.08,
               zIndex: 0,
             }}

@@ -9,6 +9,8 @@ export default function SnakePath({ onComplete }: { onComplete?: () => void }) {
   const currentProgress = useRef(0);
   const rafRef = useRef<number | null>(null);
   const completedRef = useRef(false);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
   const [ball, setBall] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function SnakePath({ onComplete }: { onComplete?: () => void }) {
 
         if (!completedRef.current && currentProgress.current > 0.995) {
           completedRef.current = true;
-          onComplete?.();
+          onCompleteRef.current?.();
         }
       }
 

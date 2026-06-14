@@ -4,7 +4,6 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'AKK Portfolio',
-    image: '/images/projects/akk.png',
     description: 'Osobiste portfolio i blog zbudowane w Next.js 15 z obsługą PL/EN.',
     stack: ['nextjs', 'typescript', 'tailwind'],
     liveUrl: 'https://https://akonkogut.vercel.app/',

@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import Technology from './Technology';
+import type { TechnologyKey } from '@/data/technologies';
 
 jest.mock('next/image', () => ({
   __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
   default: ({ src, alt }: { src: string; alt: string }) => <img src={src} alt={alt} />,
 }));
 
@@ -25,7 +27,7 @@ describe('Technology', () => {
   });
 
   it('renders initials when technology has no icon', () => {
-    render(<Technology technologyKey={'noicon' as any} />);
+    render(<Technology technologyKey={'noicon' as unknown as TechnologyKey} />);
     expect(screen.getByText('NI')).toBeInTheDocument();
   });
 
@@ -40,7 +42,7 @@ describe('Technology', () => {
   });
 
   it('badge variant renders initials when no icon', () => {
-    render(<Technology technologyKey={'noicon' as any} variant="badge" />);
+    render(<Technology technologyKey={'noicon' as unknown as TechnologyKey} variant="badge" />);
     expect(screen.getByText('NI')).toBeInTheDocument();
   });
 });
