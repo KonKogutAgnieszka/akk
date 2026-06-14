@@ -116,41 +116,92 @@
     color: #f2b8d0;
   }
 
+/*▶️ buttons */
+
   .btn {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all;
     transition: all var(--transition-base);
   }
 
-  .btn-primary {
-    background: linear-gradient(135deg, var(--color-accent), rgba(242, 184, 208, 0.85));
-    color: #1a1033;
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    box-shadow:
-      0 0 24px var(--color-accent-glow),
-      0 10px 28px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  .primary-btn {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: none;
   }
-
-  .btn-primary:hover {
+  .primary-btn:hover {
     transform: translateY(-2px);
-
-    box-shadow:
-      0 0 36px var(--color-accent-glow),
-      0 14px 34px rgba(0, 0, 0, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 24px var(--color-accent-glow);
   }
 
-  .btn-ghost {
-    border: 1.5px solid var(--color-border-hover);
-    color: var(--color-text);
+  .primary-outline-btn {
     background: transparent;
-  }
-  .btn-ghost:hover {
-    border-color: var(--color-accent);
     color: var(--color-accent);
+    border: 1.5px solid var(--color-accent);
+  }
+  .primary-outline-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
     transform: translateY(-1px);
+  }
+
+  .primary-glass-btn {
+    background: var(--color-accent-dim);
+    color: var(--color-accent);
+    border: 1px solid rgba(242, 184, 208, 0.35);
+    backdrop-filter: blur(8px);
+  }
+  .primary-glass-btn:hover {
+    background: rgba(242, 184, 208, 0.22);
+    border-color: rgba(242, 184, 208, 0.6);
+  }
+
+  .secondary-btn {
+    background: var(--color-special);
+    color: var(--color-bg);
+    border: none;
+  }
+  .secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px rgba(79, 193, 178, 0.4);
+  }
+
+  .secondary-outline-btn {
+    background: transparent;
+    color: var(--color-special);
+    border: 1.5px solid var(--color-special);
+  }
+  .secondary-outline-btn:hover {
+    background: var(--color-special);
+    color: var(--color-bg);
+    transform: translateY(-1px);
+  }
+
+  .secondary-glass-btn {
+    background: rgba(79, 193, 178, 0.15);
+    color: var(--color-special);
+    border: 1px solid rgba(79, 193, 178, 0.35);
+    backdrop-filter: blur(8px);
+  }
+  .secondary-glass-btn:hover {
+    background: rgba(79, 193, 178, 0.22);
+    border-color: rgba(79, 193, 178, 0.6);
+  }
+
+  .sweep-btn {
+    color: var(--color-text);
+    border: 1.5px solid var(--color-accent);
+    background-color: transparent;
+    background-image: linear-gradient(var(--color-accent), var(--color-accent));
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    transition:
+      background-size 0.4s ease,
+      color 0.4s ease;
+  }
+  .sweep-btn:hover {
+    background-size: 100% 100%;
+    color: var(--color-bg);
   }
 
   .badge {
