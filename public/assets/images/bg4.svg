@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="13">
+  <text x="40" y="50" fill="#6b7280">// store/useEditorStore.ts</text>
+
+  <text x="20" y="80" fill="#4b5563">1</text>
+  <text x="40" y="80">
+    <tspan fill="#c084fc">import</tspan>
+    <tspan fill="#e5e7eb"> { create } </tspan>
+    <tspan fill="#c084fc">from</tspan>
+    <tspan fill="#86efac"> 'zustand'</tspan>
+  </text>
+
+  <text x="20" y="100" fill="#4b5563">2</text>
+
+  <text x="20" y="120" fill="#4b5563">3</text>
+  <text x="40" y="120">
+    <tspan fill="#c084fc">type</tspan>
+    <tspan fill="#60a5fa"> EditorState</tspan>
+    <tspan fill="#e5e7eb"> = {</tspan>
+  </text>
+
+  <text x="20" y="140" fill="#4b5563">4</text>
+  <text x="60" y="140">
+    <tspan fill="#e5e7eb">title: </tspan>
+    <tspan fill="#60a5fa">string</tspan>
+  </text>
+
+  <text x="20" y="160" fill="#4b5563">5</text>
+  <text x="60" y="160">
+    <tspan fill="#e5e7eb">content: </tspan>
+    <tspan fill="#60a5fa">string</tspan>
+  </text>
+
+  <text x="20" y="180" fill="#4b5563">6</text>
+  <text x="60" y="180">
+    <tspan fill="#e5e7eb">isSaving: </tspan>
+    <tspan fill="#60a5fa">boolean</tspan>
+  </text>
+
+  <text x="20" y="200" fill="#4b5563">7</text>
+  <text x="60" y="200">
+    <tspan fill="#e5e7eb">update: (field: </tspan>
+    <tspan fill="#86efac">'title'</tspan>
+    <tspan fill="#e5e7eb"> | </tspan>
+    <tspan fill="#86efac">'content'</tspan>
+    <tspan fill="#e5e7eb">, value: </tspan>
+    <tspan fill="#60a5fa">string</tspan>
+    <tspan fill="#e5e7eb">) =&gt; </tspan>
+    <tspan fill="#60a5fa">void</tspan>
+  </text>
+
+  <text x="20" y="220" fill="#4b5563">8</text>
+  <text x="60" y="220">
+    <tspan fill="#e5e7eb">save: () =&gt; </tspan>
+    <tspan fill="#60a5fa">Promise</tspan>
+    <tspan fill="#94a3b8">&lt;</tspan>
+    <tspan fill="#60a5fa">void</tspan>
+    <tspan fill="#94a3b8">&gt;</tspan>
+  </text>
+
+  <text x="20" y="240" fill="#4b5563">9</text>
+  <text x="60" y="240">
+    <tspan fill="#e5e7eb">reset: () =&gt; </tspan>
+    <tspan fill="#60a5fa">void</tspan>
+  </text>
+
+  <text x="20" y="260" fill="#4b5563">10</text>
+  <text x="40" y="260" fill="#e5e7eb">}</text>
+
+  <text x="20" y="280" fill="#4b5563">11</text>
+
+  <text x="20" y="300" fill="#4b5563">12</text>
+  <text x="40" y="300">
+    <tspan fill="#c084fc">export const</tspan>
+    <tspan fill="#fde047"> useEditorStore</tspan>
+    <tspan fill="#e5e7eb"> = </tspan>
+    <tspan fill="#fde047">create</tspan>
+    <tspan fill="#94a3b8">&lt;</tspan>
+    <tspan fill="#60a5fa">EditorState</tspan>
+    <tspan fill="#94a3b8">&gt;</tspan>
+    <tspan fill="#e5e7eb">((set, get) =&gt; ({</tspan>
+  </text>
+
+  <text x="20" y="320" fill="#4b5563">13</text>
+  <text x="60" y="320">
+    <tspan fill="#fde047">title</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#86efac">''</tspan>
+    <tspan fill="#e5e7eb">,</tspan>
+  </text>
+
+  <text x="20" y="340" fill="#4b5563">14</text>
+  <text x="60" y="340">
+    <tspan fill="#fde047">content</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#86efac">''</tspan>
+    <tspan fill="#e5e7eb">,</tspan>
+  </text>
+
+  <text x="20" y="360" fill="#4b5563">15</text>
+  <text x="60" y="360">
+    <tspan fill="#fde047">isSaving</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#f472b6">false</tspan>
+    <tspan fill="#e5e7eb">,</tspan>
+  </text>
+
+  <text x="20" y="380" fill="#4b5563">16</text>
+  <text x="60" y="380">
+    <tspan fill="#fde047">update</tspan>
+    <tspan fill="#e5e7eb">: (field, value) =&gt; </tspan>
+    <tspan fill="#fde047">set</tspan>
+    <tspan fill="#e5e7eb">({ [field]: value }),</tspan>
+  </text>
+
+  <text x="20" y="400" fill="#4b5563">17</text>
+  <text x="60" y="400">
+    <tspan fill="#fde047">save</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#c084fc">async</tspan>
+    <tspan fill="#e5e7eb"> () =&gt; {</tspan>
+  </text>
+
+  <text x="20" y="420" fill="#4b5563">18</text>
+  <text x="80" y="420">
+    <tspan fill="#fde047">set</tspan>
+    <tspan fill="#e5e7eb">({ isSaving: </tspan>
+    <tspan fill="#f472b6">true</tspan>
+    <tspan fill="#e5e7eb"> })</tspan>
+  </text>
+
+  <text x="20" y="440" fill="#4b5563">19</text>
+  <text x="80" y="440">
+    <tspan fill="#c084fc">await</tspan>
+    <tspan fill="#fde047"> fetch</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#86efac">'/api/editor/save'</tspan>
+    <tspan fill="#e5e7eb">, {</tspan>
+  </text>
+
+  <text x="20" y="460" fill="#4b5563">20</text>
+  <text x="100" y="460">
+    <tspan fill="#fde047">method</tspan>
+    <tspan fill="#e5e7eb">: </tspan>
+    <tspan fill="#86efac">'POST'</tspan>
+    <tspan fill="#e5e7eb">,</tspan>
+  </text>
+
+  <text x="20" y="480" fill="#4b5563">21</text>
+  <text x="100" y="480">
+    <tspan fill="#fde047">body</tspan>
+    <tspan fill="#e5e7eb">: JSON.</tspan>
+    <tspan fill="#fde047">stringify</tspan>
+    <tspan fill="#e5e7eb">(</tspan>
+    <tspan fill="#fde047">get</tspan>
+    <tspan fill="#e5e7eb">()),</tspan>
+  </text>
+
+  <text x="20" y="500" fill="#4b5563">22</text>
+  <text x="80" y="500" fill="#e5e7eb">})</text>
+
+  <text x="20" y="520" fill="#4b5563">23</text>
+  <text x="80" y="520">
+    <tspan fill="#fde047">set</tspan>
+    <tspan fill="#e5e7eb">({ isSaving: </tspan>
+    <tspan fill="#f472b6">false</tspan>
+    <tspan fill="#e5e7eb"> })</tspan>
+  </text>
+
+  <text x="20" y="540" fill="#4b5563">24</text>
+  <text x="60" y="540" fill="#e5e7eb">},</text>
+
+  <text x="20" y="560" fill="#4b5563">25</text>
+  <text x="60" y="560">
+    <tspan fill="#fde047">reset</tspan>
+    <tspan fill="#e5e7eb">: () =&gt; </tspan>
+    <tspan fill="#fde047">set</tspan>
+    <tspan fill="#e5e7eb">({ title: </tspan>
+    <tspan fill="#86efac">''</tspan>
+    <tspan fill="#e5e7eb">, content: </tspan>
+    <tspan fill="#86efac">''</tspan>
+    <tspan fill="#e5e7eb">, isSaving: </tspan>
+    <tspan fill="#f472b6">false</tspan>
+    <tspan fill="#e5e7eb"> }),</tspan>
+  </text>
+
+  <text x="20" y="580" fill="#4b5563">26</text>
+  <text x="40" y="580" fill="#e5e7eb">}))</text>
+</svg>

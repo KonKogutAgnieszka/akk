@@ -39,29 +39,33 @@
       {
         "number": "01",
         "title": "End-to-end development",
-        "description": "Od UI po backend i logikę biznesową"
+        "description": "Buduję aplikacje od fazy projektowania UX/UI, przez integracje, aż po wdrożenie i monitorowanie systemów."
       },
       {
         "number": "02",
-        "title": "Logika backendowa i dane",
-        "description": "Implementacja logiki oraz praca z danymi i jakością kodu"
+        "title": "Logika, Dane i Wydajność",
+        "description": "Projektuję skalowalne aplikacje z płynnym stanem, stabilnym API i naciskiem na performance."
       },
       {
         "number": "03",
         "title": "Performance i UX",
-        "description": "Optymalizacja działania i doświadczeń użytkownika"
+        "description": "Łączę estetyczną intuicję z twardą optymalizacją wydajności oraz pełną dostępnością"
       },
       {
         "number": "04",
-        "title": "Analiza biznesowa",
-        "description": "Rozumienie potrzeb i przekładanie ich na rozwiązania techniczne"
+        "title": "Analiza i Myślenie Produktowe",
+        "description": "Dekoduję cele biznesowe i rozmawiam z użytkownikami, by zamieniać chaos w proste rozwiązania."
       }
     ],
-    "workBio1": "Projektuję i rozwijam aplikacje end-to-end - od architektury frontendu, przez integracje <accent>API</accent> i <accent>AI</accent>, po wdrożenie. Mam doświadczenie zarówno w pracy z rozbudowanymi systemami, jak i narzędziami wewnętrznymi.",
-    "workBio2": "Łączę development z UX dzięki backgroundowi graficznemu — widzę produkt oczami użytkownika, nie tylko dewelopera. Pracuję głównie w <accent>React</accent>, <accent>Next.js</accent> i <accent>TypeScript</accent>, ale swobodnie poruszam się również po <green>backendzie</green> i <green>bazach danych</green>.",
-    "ctaSubtitle": "Zobacz konkretne doświadczenie",
+    "workBio1": "Rozwijam aplikacje w pełnym cyklu - od architektury frontendu, przez integracje z API i modelami AI, aż po samo wdrożenie. Mam doświadczenie zarówno w pracy z rozbudowanymi systemami komercyjnymi , jak i w wdrażaniu narzędzi wewnętrznych, które usprawniają procesy biznesowe.",
+    "workBio2": "Patrzę na produkt oczami użytkownika, a nie tylko dewelopera. Pracuję głównie w <accent>React</accent>, <accent>Next.js</accent> i <accent>TypeScript</accent>, ale swobodnie poruszam się również po <green>backendzie</green> i <green>bazach danych</green> – dzięki temu płynnie tłumaczę skomplikowaną logikę systemową na intuicyjne interfejsy.",
+    "ctaSubtitle": "Zainteresowany współpracą? Zobacz kompletne podsumowanie mojego doświadczenia zawodowego",
     "ctaDownload": "Pobierz CV",
     "ctaContact": "Kontakt"
+  },
+  "Blog": {
+    "featured": "Wyróżniony",
+    "read": "Czytaj"
   },
   "NotFound": {
     "label": "under construction",

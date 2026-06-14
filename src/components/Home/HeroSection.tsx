@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import RotatingTexts from '@/components/ui/RotatingText.js';
-import { StatItem } from './StatItem';
 import Button from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
 
@@ -12,13 +11,9 @@ export default function HeroSection() {
   const textList: string[] = t.raw('rotating') as string[];
 
   return (
-    <section className="section flex flex-col min-h-[75vh] justify-center p-0 mt-10">
+    <section className="section flex flex-col min-h-[75vh] justify-center p-0">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-12">
         <div className="flex flex-col gap-4 md:gap-6 md:max-w-xl">
-          <div>
-            <span className="badge-available">{t('badge')}</span>
-          </div>
-
           <div className="flex flex-col gap-1 md:gap-2">
             <h1 className="font-display leading-none">
               <span className="hero-greeting block text-2xl md:text-[length:inherit]">
@@ -31,7 +26,7 @@ export default function HeroSection() {
 
           <div className="flex gap-3 md:gap-4 items-center">
             <Button text={t('btnPrimary')} variant="primary" />
-            <Button text={t('btnGhost')} variant="ghost" />
+            <Button text={t('btnGhost')} variant="secondary-outline" />
           </div>
         </div>
 
@@ -81,15 +76,6 @@ export default function HeroSection() {
             />
             <RotatingTexts texts={textList} />
           </div>
-        </div>
-      </div>
-
-      <div className="flex gap-12 pt-8">
-        <div className="flex flex-wrap gap-6 md:gap-12 pt-6 md:pt-8">
-          <StatItem number="100+" label={t('stats.challengesTaken')} animation="count" />
-          <StatItem number="100+" label={t('stats.problemsSolved')} animation="problems-solved" />
-          <StatItem number="3+" label={t('stats.experienceYears')} animation="count" />
-          <StatItem number="∞" label={t('stats.growth')} />
         </div>
       </div>
     </section>
