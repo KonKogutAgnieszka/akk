@@ -7,19 +7,21 @@
 
 @layer base {
   :root {
-    --color-bg: #291b29;
-    --color-surface: #342534;
-    --color-card: #342534;
+    --color-bg: #1a1033;
+    --color-surface: #251a46;
+    --color-card: #251a46;
     --color-border: rgba(255, 255, 255, 0.08);
     --color-border-hover: rgba(255, 255, 255, 0.18);
 
-    --color-accent: #2dd4c7;
-    --color-accent-dim: rgba(45, 212, 199, 0.15);
-    --color-accent-glow: rgba(45, 212, 199, 0.25);
+    --color-accent: #f2b8d0;
+    --color-accent-dim: rgba(242, 184, 208, 0.15);
+    --color-accent-glow: rgba(242, 184, 208, 0.25);
 
-    --color-text: #f0f0f0;
-    --color-text-muted: rgba(240, 240, 240, 0.75);
-    --color-text-subtle: rgba(240, 240, 240, 0.25);
+    --color-special: #4fc1b2;
+
+    --color-text: #e8e0ec;
+    --color-text-muted: rgba(232, 224, 236, 0.75);
+    --color-text-subtle: rgba(232, 224, 236, 0.45);
 
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', sans-serif;
@@ -98,20 +100,20 @@
   .display-italic {
     font-family: var(--font-display);
     font-style: italic;
-    color: var(--color-accent);
+    color: var(--color-special);
   }
 
   .hero-greeting {
     font-family: var(--font-display);
     font-size: 96px;
-    color: rgba(244, 219, 240, 0.45);
+    color: rgba(232, 224, 236, 0.4);
   }
 
   .hero-subtitle {
     font-family: var(--font-display);
     font-size: 32px;
     font-style: italic;
-    color: #cfc3ca;
+    color: #f2b8d0;
   }
 
   .btn {
@@ -120,8 +122,8 @@
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-accent), rgba(45, 212, 199, 0.85));
-    color: #0a0f0e;
+    background: linear-gradient(135deg, var(--color-accent), rgba(242, 184, 208, 0.85));
+    color: #1a1033;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
 
@@ -152,7 +154,7 @@
   }
 
   .badge {
-    background: #342534;
+    background: var(--color-surface);
     border-radius: 999px;
   }
 
@@ -168,7 +170,7 @@
   }
 
   .card-float {
-    background: rgba(52, 37, 52, 0.5);
+    background: rgba(37, 26, 70, 0.5);
     border-radius: var(--radius-md);
     padding: 14px 16px;
     backdrop-filter: blur(12px);
@@ -179,7 +181,7 @@
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 500;
-    color: #a3e635;
+    color: var(--color-special);
     line-height: 1;
   }
 
@@ -307,7 +309,7 @@
 
   .btn-fill-lr.is-filled {
     animation: fill-lr 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    color: #0a0f0e;
+    color: #1a1033;
   }
 
   .tech-icon-wrapper .tech-icon {
@@ -354,7 +356,7 @@
     height: 300px;
     left: 0;
     top: -60px;
-    background: radial-gradient(circle, rgba(45, 212, 199, 0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(242, 184, 208, 0.07) 0%, transparent 70%);
     border-radius: 50%;
     filter: blur(40px);
     pointer-events: none;

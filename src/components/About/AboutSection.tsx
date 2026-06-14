@@ -95,7 +95,7 @@ export default function AboutSection() {
               <div key={number} className="flex gap-4">
                 <span
                   className="font-display font-semibold text-2xl leading-none mt-0.5"
-                  style={{ color: '#A3E635' }}
+                  style={{ color: 'var(--color-special)' }}
                 >
                   {number}
                 </span>
@@ -124,8 +124,8 @@ export default function AboutSection() {
         <div ref={ref6} className="w-full wide:w-[58%] wide:ml-auto pt-8 pb-6">
           <p className="text-xl leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
             {t.rich('workBio2', {
-              accent: (chunks) => <span style={{ color: '#A3E635' }}>{chunks}</span>,
-              green: (chunks) => <span style={{ color: '#A3E635' }}>{chunks}</span>,
+              accent: (chunks) => <span style={{ color: 'var(--color-special)' }}>{chunks}</span>,
+              green: (chunks) => <span style={{ color: 'var(--color-special)' }}>{chunks}</span>,
             })}
           </p>
         </div>
